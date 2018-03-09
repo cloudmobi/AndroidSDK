@@ -1,14 +1,15 @@
-* [Getting Started with AS](#start)
-    * [Add the SDK to Your Project](#Add)
-    * [Update AndroidManifest.xml](#AndroidManifest)
-    * [Init the SDK](#Init)
-    * [For Proguard](#ProGuard)
-    * [Integration Notes](#integration)
+# Getting Started with the Cloudmobi Android SDK
+
+* [Before you start](#start)
+* [step 1. Add the Cloudmobi SDK in your project](step1)
+* [step 2. Update AndroidMainifest.xml](step2)
+* [step 3. Initialize the Cloudmobi SDK](step3)
+* [step 4. Android code obfuscation](step4)
+* [Something you should know---Integration Note](note)
 * [Native](#native)
     * [Element-Native](#common)
     * [Element-Native with imagePreload](#preload)
     * [Element-Native with adCache](#cache)
-    * [Element-Native with keywords](#keywords)
     * [Element-Native for Multiple](#multi)
     * [Template-Native](#template)
 * [Banner](#banner)
@@ -19,20 +20,24 @@
     * [admob](#admob)
 * [Rewarded Video](#reward)
 * [Error Code For SDK](#error)
-* [Release Notes](#release)
-* [Getting Started with eclipse](#eclipse)
 
-## <a name="start">Getting Started with AS</a>
+## <a name="start">Before You Start</a>
 
-Before You Start, We support Android API 14 or later.
+- Cloudmobi Android SDK supports banner, interstitial, native, and rewarded video 
+- Furthermore, Cloudmobi Android SDK supports mediation with facebook and Admob via SDK in banner, interstitial and native ads
+- Cloudmobi Android SDK supports Android API 14 or later
+- Please make sure you have signed up on the Cloudmobi Platform. If you haven't signed up, please contact us via email: sdk_support@yeahmobi.com
+- Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
+- Please download [our latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
 
-### <a name="Add">Add the SDK to Your Project</a>
+### <a name="Add">step 1. Add the Cloudmobi SDK in your project</a>
 
 We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
-#### Jar dependencies
+### Option 1. Integrating the Cloudmobi SDK in to your APP manually
+####Jar dependencies
 
-* [Download the SDK](https://github.com/cloudmobi/CloudmobiSSP/raw/master/AndroidSDK.zip)
+* [Download the latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
 * Detail of the different jars：
 
   | jar name                    | jar function                             | require(Y/N) |
@@ -50,27 +55,27 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
     }
 ```
 
-#### Maven dependencies
+### Option 2. Integrating the Cloudmobi SDK as an AAR via Maven
 
 * Maven version notes:  the newest version is 2.4.0.
 * Detail of the different link
 
- | link name                        | link function               | require(Y/N) |
-  | ---------------------------     | --------------------------- | ------------ |
-  | com.cloudtech:ads:2.4.0         | basic functions             | Y |
-  | com.cloudtech:imageloader:2.4.0 | imageloader functions       | N |
-  | com.cloudtech:appwall:2.4.0     | appwall ads functions       | N |
-  | com.cloudtech:videoads:2.4.0    | video ads functions         | N |
-  
- * Update the module's build.gradle for basic functions：
+| link name                       | link function         | require(Y/N) |
+| ------------------------------- | --------------------- | ------------ |
+| com.cloudtech:ads:2.4.0         | basic functions       | Y            |
+| com.cloudtech:imageloader:2.4.0 | imageloader functions | N            |
+| com.cloudtech:appwall:2.4.0     | appwall ads functions | N            |
+| com.cloudtech:videoads:2.4.0    | video ads functions   | N            |
+
+* Update the module's build.gradle for basic functions：
 
 ``` groovy
     dependencies {
         compile 'com.cloudtech:ads:2.4.0'
     }
-``` 
+```
 
-### <a name="AndroidManifest">Update AndroidManifest.xml</a>  
+### <a name="step2">step 2. Update AndroidManifest.xml</a>  
 
 ``` xml
 <!--Necessary Permissions-->
@@ -95,7 +100,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 ```
 
-### <a name="Init">Init the SDK</a>  
+### <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
 
 You can init the SDK in your application as detailed below:
 
@@ -103,7 +108,7 @@ You can init the SDK in your application as detailed below:
    CTService.init(context, "one of your slotId");
 ```
 
-### <a name="ProGuard">For ProGuard</a> 
+### <a name="step4">Step 4. Android code obfuscation</a> 
 
 If you are using ProGuard with the Cloudmobi SDK, you must add the following code to your ProGuard file:
 
@@ -126,9 +131,9 @@ If you are using ProGuard with the Cloudmobi SDK, you must add the following cod
 ```
 
 
-### <a name="integration">Integration Notes</a>
+### <a name="note">Integration Notes</a>
 
-* If you live in a country, like China, which is forbidden google play, two prerequisites to get Cloudmobi ads: 
+* If you live in a country, such as China, which is forbidden google play, two prerequisites to get Cloudmobi ads: 
 
   1. GooglePlay has installed on your device.
   2. Your device have connect to VPN.
@@ -196,7 +201,6 @@ public class MyCTAdEventListener implements CTAdEventListener {
         	Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     	}
 	}
-
 ```
 
 ## <a name="native">Native Ads Integration</a>
@@ -385,40 +389,6 @@ public class MyCTAdEventListener implements CTAdEventListener {
 
 
 
-### <a name="keywords">Single elements-Native ads interface for keywords</a>
-
-``` java
-
-    List<String> keywords = new ArrayList<>();
-    keywords.add("tools");
-    keywords.add("games");
-
-    /**
-     * @param slotId     cloudmobi id
-     * @param context    context
-     * @param imageType  the rate of image(1.9:1 or 1:1)
-     * @param adsCat     the type of ads 
-     * @param keywords   the keywords for ads
-     * @param adListener callback listener 
-     * @return
-     */
-    CTService.getAdvanceNativeByKeywords("your slotid", context,
-    		 CTImageRatioType.RATIO_19_TO_10, CTAdsCat.TYPE_TOOL, keywords,
-    		 	new MyCTAdEventListener(){
-               @Override
-               public void onAdviewGotAdSucceed(CTNative result) {
-                   if (result == null){
-                       return;
-                   }
-
-                   CTAdvanceNative ctAdvanceNative = (CTAdvanceNative) result;
-                   showAd(ctAdvanceNative);
-                   super.onAdviewGotAdSucceed(result);
-
-               }
-            });
-```
-
 ### <a name="multi">Multi elements-Native ads interface</a>
 
 * The method to load multi Native ads
@@ -605,7 +575,7 @@ public class MyCTAdEventListener implements CTAdEventListener {
 * Preload appwall
 
     It‘s better to preload ads for Appwall, to ensure they show properly and in a timely fashion. You can have ads preload with the following line of code:
- 
+
 
 ``` java
 
@@ -673,7 +643,7 @@ public class MyCTAdEventListener implements CTAdEventListener {
     1、Google Advertising ID
 
     The Rewarded Video function requires access to the Google Advertising ID in order to operate properly.
- See this guide on how to integrate [Google Play Services](https://developers.google.com/android/guides/setup).
+     See this guide on how to integrate [Google Play Services](https://developers.google.com/android/guides/setup).
 
     2、Google Play Services in Your Android Manifest
 
@@ -715,10 +685,10 @@ public class MyCTAdEventListener implements CTAdEventListener {
 ```
 
 * Setup the UserID
-  
+
   You should set the userID for s2s-postback before preloading the RewardedVideo function call
 
-  
+
 ```java
     CTServiceVideo.setUserId("custom_id");
 ```
@@ -804,7 +774,7 @@ public void onRewardedVideoAdRewarded(String rewardName, String rewardAmount) {
 
 ## <a name="error">Error Code For SDK</a>
 
-| Error Code                         | Description                              |
+| Error Code                        | Description                              |
 | --------------------------------- | ---------------------------------------- |
 | ERR\_000\_TRACK                   | Track exception                          |
 | ERR\_001\_INVALID_INPUT           | Invalid parameter                        |
@@ -812,15 +782,15 @@ public void onRewardedVideoAdRewarded(String rewardName, String rewardAmount) {
 | ERR\_003\_REAL_API                | Error from Ad Server                     |
 | ERR\_004\_INVALID_DATA            | Invalid advertisement data               |
 | ERR\_005\_RENDER_FAIL             | Advertisement render failed              |
-| ERR\_006\_LANDING_URL             | Landing URL failed                          |
-| ERR\_007\_TO_DEFAULT_MARKET       | Default Landing URL failed                 |
+| ERR\_006\_LANDING_URL             | Landing URL failed                       |
+| ERR\_007\_TO_DEFAULT_MARKET       | Default Landing URL failed               |
 | ERR\_008\_DL_URL                  | Deep-Link exception                      |
 | ERR\_009\_DL_URL_JUMP             | Deep-Link jump exception                 |
 | ERR\_010\_APK_DOWNLOAD_URL        | Application package download failed      |
 | ERR\_011\_APK_INSTALL             | Application install failed               |
 | ERR\_012\_VIDEO_LOAD              | Load the video exception                 |
-| ERR\_013\_PAGE_LOAD               | HTML5 page load failed             |
-| ERR\_014\_JAR_UPDATE_VERSION      | Update jar check failed             |
+| ERR\_013\_PAGE_LOAD               | HTML5 page load failed                   |
+| ERR\_014\_JAR_UPDATE_VERSION      | Update jar check failed                  |
 | ERR\_015\_GET_GAID                | Cannot get google advertisement id - GAID retrieval failed |
 | ERR\_016\_GET_AD_CONFIG           | Cannot get the account configuration or template |
 | ERR\_017\_INTERSTITIAL_SHOW_NO_AD | Tried to load the interstitial advertisement, but the advertisement is not ready/loading |
@@ -828,250 +798,9 @@ public void onRewardedVideoAdRewarded(String rewardName, String rewardAmount) {
 | ERR\_999\_OTHERS                  | All other errors                         |
 
 
-## <a name="release">Release Notes</a>
 
-*  Version 1.4.0  [release date: 2017-02-21]
 
-    1. Use the new Ad server address.
-    2. Add a new api in CTAdvanceNative for unregister click area.
-*  Version 1.4.6 [release date: 2017-03-08]
 
-    1. Admob advance native ads don't send impressions.
-    2. Fix a accidental crash bug when android api version is 4.0.4.
-    3. Appwall don't load ads, when use the appwall function only.
 
-*  Version 1.4.8 [release date: 2017-03-17]
-
-    1. Feature: add the video ads module
-    2. Feature: video ads support reward video ad
-
-*  Version 1.5.0 [release date: 2017-03-30]
-
-    1. Fix bug: do a workaround for Oppo phone's crash.
-    2. Fix bug: resolve the bug about ConcurrentModification.
-    3. Feature: Update impression logic.
-    4. Feature: Add animation support when show app wall. 
-
-*  Version 1.6.0 [release date: 2017-05-05]
-
-    1. Upgrade video ad with cache feature.
-    2. Support more vast track events.
-    3. Interstitisl-ads support two sizes: fullscreen\notfullscreen
-    4. Fix bug: the template can be null for advanceNative slotid.
-
-*  Version 1.6.5 [release date: 2017-05-15]
-
-    1. support facebook-audience-network 4.22.0
-    2. Fix bug: Reward Video continue play when back from background.
-
-*  Version 1.6.6 [release date: 2017-05-17]
-
-    1. Fix two bugs for reward video
-    2. update the eclpise sample
-
-*  Version 1.6.7 [release date: 2017-05-24]
-
-    1. add preload image cache for Advance Native Ad
-
-*  Version 1.7.0 [release date: 2017-06-02]
-
-    1. update layout for reward video finish
-
-*  Version 1.7.2 [release date: 2017-06-20]
-
-    1. Fix bugs: Reward video progress bar.
-    2. Fix bugs: not show dialog after Reward video finished.
-
-*  Version 1.7.3 [release date: 2017-07-03]
-
-    1. Support cache the ads by getAdvanceNativeFroCache()
-    2. Provide adapter for Mopub with Cloudmobi sdk.
-
-*  Version 1.7.6 [relase date: 2017-07-25]
-
-    1. Optimize multithreading issues;
-    2. Support multiple processes;
-    3. Optimize templates and configuration request;
-    4. Optimize ContextHolder,TrackUtil,Utils and so on
-    5. Fix the occasional crash when request on android 4;
-    6. Fix the problem when video restore from minimization;
-    7. Fix bug: Gridview first Item not work in appwall;
-    8. Fix bug: the interface for proladImage stop when load facebook ads.
-
-*  Version 2.0.0 [release date: 2017-09-22]
-
-    1. Optimize the base function jar
-    2. public the Reward Video mediation function jar
-
-*  Version 2.0.2 [release date: 2017-09-28]
-
-    1. Fix bug: Thread Pool Exception
-
-*  Version 2.0.3 [release date: 2017-10-10]
-
-    1. Fix bug: compatible the template request url version
-    2. upload log of RewardVideo Mediation for important node
-    3. remove the facebook/admob error msg for not group facebook/admob ads
-
-*  Version 2.0.4 [release date: 2017-10-20]    
-
-    1. add volum controller in RewardedVideo
-    2. add params pn in RewardedVideo Tracking-log 
-    3. fix RewardedVideo impression log ts tag  
-
-*  Version 2.0.6 [release date: 2017-10-30]    
-    1. fix replace slot id 019 error  
-   
-*  Version 2.0.7 [release date: 2017-10-31]    
-    1. fix ContextHolder null exception
-    
-*  Version 2.0.8 [release date: 2017-11-02]    
-    1. Optimize RewardedVideo logic
-
-*  Version 2.0.9 [release date: 2017-11-30]    
-    1. Optimize RewardedVideo logic
-    2. Fix NullPointerException in RewardedVideo
-
-*  Version 2.0.11 [release date: 2017-12-08]    
-    1. Optimize SDK logic
-
-*  Version 2.1.0 [release date: 2017-12-13]
-    1. Optimize SDK RewardedVideo logic
-    2. Fix MediaPlay NullPointerException in RewardedVideo
-    
- *  Version 2.1.1 [release date: 2017-12-15]
-    1. Optimize the finishPage UI for RewardedVideo
-    2. Fix the requestFailed callback preblem
-    
-*   Version 2.1.5 [release date: 2017-12-22]
-
-    1. Add the setUserId() function for s2s-postback
-    2. Fix the bug for RewardedVideo play
-    3. Fix the bug for multi callback for RewardedView callback.  
-    
-*   Version 2.1.8 [release date: 2018-01-04]
-
-    1. Fix ANR for RewardedVideo finished.
-    2. Optimize the AdTemplateManager logic for template.
-    3. Set the button content from service in FinishUI for RewardedVideo.
-    
-*   Version 2.2.0 [release date: 2018-01-10]
-    1. Fix ANR for Service.
-    2. Optimize the appwall logic.
-
-*   Version 2.2.1 [release date: 2018-01-19]
-    1. Support sensorlandscape for RewardedVideo
-    2. Support back button for finishUI of RewardedVideo
-    3. Update the CloseButton for finishUI of RewardedVideo
-    4. Protect the referenced RewardedVideo Creative 
-    
-*   Version 2.2.3 [release date: 2018-02-06]
-    1. Update necessary params in requestUrl
-    2. fix black screen for some Incomplete-Video.
-    
-*   Version 2.4.0 [release date: 2018-03-07]     
-    1. Support intergate sdk by maven; 
-    2. Fix https problem encounter on api 15;
-    3. Optimize the finish UI for RewardedVideo.
-    
-## <a name="eclipse">Getting Started with eclipse</a>
-
-* [Download the SDK](https://github.com/cloudmobi/CloudmobiSSP/raw/master/AndroidSDK.zip)
-* Build tool：Ant
-* Add the Cloudssp SDK into target project folder /libs/ , and Add them to build path.
-* If you need group facebook/admob ads by Cloudssp SDK, you should add the related dependence in your project and add the corresponding id.
-
- ```java 
-    //for basic sdk
-    cloudssp_xx.jar
-    
-    //for imageloader
-    cloudssp_imageloader_xx.jar
-    
-    //for appwall
-    cloudssp_appwall_xx.jar
- 
- 	  //for facebook ads
-	   AudienceNetwork.jar
-
-	   //for admob ads
-	   google-play-services-ads-lite.jar
-	   google-play-services-basement.jar
-	
-	//notes
-	If you need facebook or admob ads， please add facebook placement id and admob ad unit id in ssp.
-	If you don't need the facebook or Admob ADs,the related dependence is not needed
-
- ```
-
-*  Update AndroidManifest.xml as below:
-
-``` xml
-	<!--Necessary Permissions-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-    	<!--Necessary-->
-        <activity android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
-            android:launchMode="singleInstance">
-            <intent-filter>
-                <action android:name="com.cloudtech.action.InnerWebLanding" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        
-        <service
-            android:name="com.cloudtech.ads.core.AdGuardService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
-
-		<!--for cloudssp interstitial ads-->
-        <activity android:name="com.cloudtech.ads.view.InterstitialActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:launchMode="singleInstance">
-        </activity>
-
-        <!--for cloudssp appwall-->
-        <activity
-        	android:name="com.cloudtech.appwall.AppwallActivity"
-        	android:label="@string/app_name"
-        	android:screenOrientation="portrait"
-        	android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-     	</activity>
-
-		<!--for admob interstitial ads-->
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <activity android:name="com.google.android.gms.ads.AdActivity"
-        	android:configChanges="keyboard|keyboardHidden|orientation|
-        			screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
-```
-
-* Add below rules for code obfuscation in proguard-project.txt:
-
-```
-    #for sdk
-    -dontoptimize
-    -dontpreverify
-    -dontwarn com.cloudtech.**
-    -keep public class com.cloudtech.**{*;}
-
-    #for gaid
-    -keep class **.AdvertisingIdClient$** { *; }
-
-    #for js and wwebview interface
-    -keepclassmembers class * {
-        @android.webkit.JavascriptInterface <methods>;
-    }
-
-    #for not group facebook/admob ads
-    -dontwarn com.google.android.**
-    -dontwarn com.facebook.ads.**
-
-```
 
 
