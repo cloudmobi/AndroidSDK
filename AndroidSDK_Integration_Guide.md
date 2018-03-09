@@ -30,12 +30,12 @@
 - Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
 - Please download [our latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
 
-### <a name="Add">step 1. Add the Cloudmobi SDK in your project</a>
+## <a name="Add">Step 1. Add the Cloudmobi SDK in your project</a>
 
 We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 ### Option 1. Integrating the Cloudmobi SDK in to your APP manually
-####Jar dependencies
+
 
 * [Download the latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
 * Detail of the different jars：
@@ -75,7 +75,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
     }
 ```
 
-### <a name="step2">step 2. Update AndroidManifest.xml</a>  
+## <a name="step2">Step 2. Update AndroidManifest.xml</a>  
 
 ``` xml
 <!--Necessary Permissions-->
@@ -100,7 +100,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 ```
 
-### <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
+## <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
 
 You can init the SDK in your application as detailed below:
 
@@ -108,7 +108,7 @@ You can init the SDK in your application as detailed below:
    CTService.init(context, "one of your slotId");
 ```
 
-### <a name="step4">Step 4. Android code obfuscation</a> 
+## <a name="step4">Step 4. Android code obfuscation</a> 
 
 If you are using ProGuard with the Cloudmobi SDK, you must add the following code to your ProGuard file:
 
@@ -131,7 +131,7 @@ If you are using ProGuard with the Cloudmobi SDK, you must add the following cod
 ```
 
 
-### <a name="note">Integration Notes</a>
+## <a name="note">Integration Notes</a>
 
 * If you live in a country, such as China, which is forbidden google play, two prerequisites to get Cloudmobi ads: 
 
