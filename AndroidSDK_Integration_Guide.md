@@ -30,7 +30,7 @@
 - Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
 - Please download [our latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
 
-### [Step 1. Add the Cloudmobi SDK in your project](#step1)
+## <a name="step1">Step 1. Add the Cloudmobi SDK in your project</a>  
 
 We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
