@@ -1,11 +1,11 @@
 # Getting Started with the Cloudmobi Android SDK
 
 * [Before you start](#start)
-* [step 1. Add the Cloudmobi SDK in your project](step1)
-* [step 2. Update AndroidMainifest.xml](step2)
-* [step 3. Initialize the Cloudmobi SDK](step3)
-* [step 4. Android code obfuscation](step4)
-* [Something you should know---Integration Note](note)
+* [step 1. Add the Cloudmobi SDK in your project](#step1)
+* [step 2. Update AndroidMainifest.xml](#step2)
+* [step 3. Initialize the Cloudmobi SDK](#step3)
+* [step 4. Android code obfuscation](#step4)
+* [Something you should know---Integration Note](#note)
 * [Native](#native)
     * [Element-Native](#common)
     * [Element-Native with imagePreload](#preload)
@@ -30,7 +30,7 @@
 - Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
 - Please download [our latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
 
-### [Step 1. Add the Cloudmobi SDK in your project](step1)
+### [Step 1. Add the Cloudmobi SDK in your project](#step1)
 
 We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
