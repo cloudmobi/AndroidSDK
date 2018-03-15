@@ -10,7 +10,7 @@
 * Make sure you have correctly integrated Mopub Rewarded Video or Interstitial(Fullscreen) or Banner or native Mediation into your application.
 * Please make sure you have signed up in CloudMobi Platform. If you haven't signed up,please contact us, email: sdk_support@yeahmobi.com
 * please make sure you have added an app and at leaset one ad slot in CloudMobi Platform
-* [Download Adapter](https://github.com/cloudmobi/CloudmobiSSP/blob/master/AndroidSDK_Adapter-For-Mopub.zip)
+* [Download Adapter](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK_Adapter-For-Mopub.zip)
 
 ## <a name="Docking">Intergation</a>
 
