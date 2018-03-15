@@ -54,7 +54,7 @@ Currently we support rewarded video and interstitial mediation for Android
  
  ```
  
-(2)Parameter is the slot ID in the CloudMobi platform. You can find it in your app list on the Cloudmobi platform
+(2)Parameter is the slot ID in the Cloudmobi platform. You can find it in your app list on the Cloudmobi platform
  
 
 ![image](https://user-images.githubusercontent.com/20314643/34601111-7ecc1b88-f235-11e7-90e1-017785793815.png)
@@ -107,7 +107,7 @@ Currently we support rewarded video and interstitial mediation for Android
 -dontwarn com.google.android.**
 -dontwarn com.facebook.ads.**
 ```
-**Done!** You are now all set to deliver CloudMobi Ads within your application!
+**Done!** You are now all set to deliver Cloudmobi Ads within your application!
 
 For more details information about Custom Events in Admob Mediation, please click [here](https://developers.google.com/admob/android/custom-events)
 
