@@ -1,6 +1,6 @@
 # AdMob Mediation Integration Guide
 
-This guide instructs you step-by-step on how to set CloudMobi live as an Ad Network on the Admob Mediation platform.
+This guide instructs you step-by-step on how to set Cloudmobi live as an Ad Network on the Admob Mediation platform.
 
 Currently we support Rewarded Video and Interstitial for mediation.
 
