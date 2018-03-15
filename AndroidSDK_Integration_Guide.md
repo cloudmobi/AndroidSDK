@@ -57,21 +57,21 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 ### Option 2. Integrating the Cloudmobi SDK as an AAR via Maven
 
-* Maven version notes:  the newest version is 2.4.0.
+* Maven version notes:  the newest version is 2.4.2.
 * Detail of the different link
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:2.4.0         | basic functions       | Y            |
-| com.cloudtech:imageloader:2.4.0 | imageloader functions | N            |
-| com.cloudtech:appwall:2.4.0     | appwall ads functions | N            |
-| com.cloudtech:videoads:2.4.0    | video ads functions   | N            |
+| com.cloudtech:ads:2.4.2         | basic functions       | Y            |
+| com.cloudtech:imageloader:2.4.2 | imageloader functions | N            |
+| com.cloudtech:appwall:2.4.2     | appwall ads functions | N            |
+| com.cloudtech:videoads:2.4.2    | video ads functions   | N            |
 
 * Update the module's build.gradle for basic functions：
 
 ``` groovy
     dependencies {
-        compile 'com.cloudtech:ads:2.4.0'
+        compile 'com.cloudtech:ads:2.4.2'
     }
 ```
 
@@ -282,8 +282,8 @@ public class MyCTAdEventListener implements CTAdEventListener {
     or
     
     dependencies {
-        compile 'com.cloudtech:ads:2.4.0'
-        cimpile 'com.cloudtech:imageloader:2.4.0'   // for preload image
+        compile 'com.cloudtech:ads:2.4.2'
+        cimpile 'com.cloudtech:imageloader:2.4.2'   // for preload image
     } 
      
 
@@ -553,9 +553,9 @@ public class MyCTAdEventListener implements CTAdEventListener {
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:2.4.0'
-        compile 'com.cloudtech:appwall:2.4.0'       // for appwall        
-        compile 'com.cloudtech:imageloader:2.4.0'   // for imageloader
+        compile 'com.cloudtech:ads:2.4.2'
+        compile 'com.cloudtech:appwall:2.4.2'       // for appwall        
+        compile 'com.cloudtech:imageloader:2.4.2'   // for imageloader
 	}
 
 ```
@@ -669,9 +669,9 @@ public class MyCTAdEventListener implements CTAdEventListener {
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:2.4.0'
-	     compile 'com.cloudtech:videoads:2.4.0'
-	     compile 'com.cloudtech:imageloader:2.4.0'
+	     compile 'com.cloudtech:ads:2.4.2'
+	     compile 'com.cloudtech:videoads:2.4.2'
+	     compile 'com.cloudtech:imageloader:2.4.2'
 	}
 ```
 

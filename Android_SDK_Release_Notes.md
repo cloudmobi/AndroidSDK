@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 2.4.2   |  2018-03-15  | * Fix bugs: AdTemplateManager\CTNative; <br>* Support https for ads request. <br> |
 | 2.4.0   |  2018-03-07  | * Support intergate sdk by maven; <br>* Fix https problem encounter on api 15; <br>  *Optimize the finish UI for RewardedVideo. |
 | 2.2.3   |  2018-02-06  | * Update necessary params in requestUrl <br> * fix black screen for some Incomplete-Video. |
 | 2.2.1   |  2018-01-19  | *  Support sensorlandscape for RewardedVideo <br> * Support back button for finishUI of RewardedVideo <br> * Update the CloseButton for finishUI of RewardedVideo  <br> * Protect the referenced RewardedVideo Creative |
