@@ -7,7 +7,7 @@ Currently we support Rewarded Video and Interstitial for mediation.
 #### Before You Start
 
 - Make sure you have a Cloudmobi SSP account, & created an application and ad slots on the CloudMobi Platform.
-- To serve CloudMobi's Ads, you must have the [CloudMobi Basic Android SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip) integrated also.  
+- To serve Cloudmobi's Ads, you must have the [Cloudmbi Basic Android SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip) integrated also.  
 
 #### Adapter-For-Admob [Download](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK_Adapter-For-Admob.zip)
 
