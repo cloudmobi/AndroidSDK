@@ -10,7 +10,7 @@
 * Make sure you have correctly integrated Mopub Rewarded Video or Interstitial(Fullscreen) or Banner or Native Mediation into your application.
 * Please make sure you have signed up on Cloudmobi Platform to get your own slot id for test. If you haven't signed up, please contact us, email to sdk_support@yeahmobi.com.
 * [Download the latest Cloudmobi SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
-* [Download the Cloudmobi Adapter for mopub](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK_Adapter-For-Mopub.zip)
+* [Download the Cloudmobi Adapter for Mopub](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK_Adapter-For-Mopub.zip)
 
 
 
