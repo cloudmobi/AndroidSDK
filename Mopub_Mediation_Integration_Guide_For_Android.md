@@ -4,56 +4,61 @@
 
 ## <a name="start">Before You Start</a>  
 
-* Support native, banner, interstital and reward video.
-* Support API 14(Android 4.0 or later)
-* Mopub Platform account needed. 
-* Make sure you have correctly integrated Mopub Rewarded Video or Interstitial(Fullscreen) or Banner or native Mediation into your application.
-* Please make sure you have signed up in Cloudmobi Platform. If you haven't signed up,please contact us, email: sdk_support@yeahmobi.com
-* please make sure you have added an app and at leaset one ad slot in Cloudmobi Platform
-* [Download Adapter](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK_Adapter-For-Mopub.zip)
+* Support Native, Banner, Interstital and Rewarded Video.
+* Support API 14(Android 4.0 or later).
+* The Mopub account is needed. 
+* Make sure you have correctly integrated Mopub Rewarded Video or Interstitial(Fullscreen) or Banner or Native Mediation into your application.
+* Please make sure you have signed up on Cloudmobi Platform to get your own slot id for test. If you haven't signed up, please contact us, email to sdk_support@yeahmobi.com.
+* [Download the latest Cloudmobi SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
+* [Download the Cloudmobi Adapter for mopub](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK_Adapter-For-Mopub.zip)
+
+
 
 ## <a name="Docking">Intergation</a>
 
-### １. Add CloudSSP network in Mopub console
 
-![image](https://user-images.githubusercontent.com/11080337/27760048-e9f81802-5e70-11e7-93ba-7c186467b5df.png)
+### Step 1: Integrate Mopub SDK    
 
-### ２. Create apps and ad unit id in Mopub console
-
-![image](https://user-images.githubusercontent.com/11080337/27760203-4b21ec86-5e74-11e7-8d0d-ef8328a5c4cc.png)
-
-### 3. Cnfigeration on Mopub
+> If you haven't already, make sure you've integrate MoPub SDK.
+> Log on to the Mopub website:[MoPub Platform](https://app.mopub.com/account/login)
 
 
-![image](https://user-images.githubusercontent.com/11080337/27760260-b71bf0c0-5e75-11e7-9d1c-afc25200a902.png)
+### Step 2: Integrate Cloudmobi SDK
 
-|Android class full name|com.mopub.mobileads.CTAdapterFullScreen|
-|--|--|
-||com.mopub.mobileads.CTAdapterNative|
-||com.mopub.mobileads.CTAdapterBanner|
-||com.mopub.mobileads.CTAdapterRewardVideo|
-|ClpudSSP Slot ID|{"CT_SLOTID":"slot ID"}|
+* Detail of Cloudmobi SDK
 
-> The Number is the slot ID on Cloudmobi Platform
+    | jar name | jar function |
+    | --- | --- |
+    | cloudssp_xx.jar             | for banner\fullscreem\native ads |
+    | cloudssp_imageloader_xx.jar | Imageloader function |
+    | cloudssp_videoads_xx.jar    | RewardedVideo function |
 
-### 4. Copy related code from the Sample code (in our adapter), place the source code into your source code folder: com.mopub.mobileads. 
+* Add the needed jars to your module's libs/
+* Update the module's build.gradle as follows
+ 
+    ```
+   dependencies {
+       compile files('libs/cloudssp_xx.jar')
+       compile files('libs/cloudssp_videoads_xx.jar')
+       compile files('libs/cloudssp_imageloader_xx.jar')
+   }
+    ```
 
-![image](https://user-images.githubusercontent.com/11080337/27760298-9673bcee-5e76-11e7-8d60-dffadf402cef.png)
+* Update the AndroidManifest.xml
 
-### 5. Update the android manefest to support fullscreen AD and RewardedVideo AD.
-
-```
-        <!--for cloudssp interstitial ads-->
+    ```
+        <!--for fullscreen ads-->
         <activity android:name="com.cloudtech.ads.view.InterstitialActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait">
         </activity>
 
-        <!--for cloudssp rewarded video-->
+        <!--for RewardedVideo-->
         <activity android:name="com.cloudtech.videoads.api.CTInterstitialActivity"
             android:screenOrientation="landscape"/>
 
+        <!--Optional-->
         <!--for better Ad revenue-->
         <service
             android:name="com.cloudtech.ads.core.AdGuardService"
@@ -61,11 +66,51 @@
 
         <!--for non google play Ad-->
         <activity android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
-            android:launchMode="singleInstance">
-            <intent-filter>
-                <action android:name="com.cloudtech.action.InnerWebLanding" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:launchMode="singleInstance"/>
+    ```
 
-```
+### Step 3: Integrate the adapter
+
+* Details of the adapter
+
+    | file name | file function |
+    | --- | --- |
+    | CTAdapterBanner.java | for banner ads |
+    | CTAdapterFullScreen.java | for fullscreen ads |
+    | CTAdapterNative.java | for native ads |
+    | CTAdapterRewardedVideo.java | for RrewardedVideo ads |
+    | CTHelper.java <br> MyCTAdEventListener.java | **Necessary**. <br> Support above function. |
+
+
+* Copy the needed Java files from adapter/ into your project source folder, under **com/mopub/mobileleads**. like follows:
+    ![image](https://user-images.githubusercontent.com/11080337/27760298-9673bcee-5e76-11e7-8d60-dffadf402cef.png)
+    
+### Step 4: MoPub Configuration
+
+* Add CloudSSP network in Mopub console
+
+![image](https://user-images.githubusercontent.com/11080337/27760048-e9f81802-5e70-11e7-93ba-7c186467b5df.png)
+
+* Create apps and ad unit id in Mopub console
+
+![image](https://user-images.githubusercontent.com/11080337/27760203-4b21ec86-5e74-11e7-8d0d-ef8328a5c4cc.png)
+
+* Add the Custom Event Classes for the Android SDK:
+
+    | ad type | full class name |
+    | --- | --- |
+    | Banner ad unit     | com.mopub.mobileads.CTAdapterBanner |
+    | FullScreen ad unit | com.mopub.mobileads.CTAdapterFullScreen |
+    | Native ad unit     | com.mopub.mobileads.CTAdapterNative |
+    | RewardedVideo ad unit     | com.mopub.mobileads.CTAdapterRewardVideo|
+
+    For each unit, you will need to add a JSON object:  **{"CT_SLOTID":"your slotID"}**
+![image](https://user-images.githubusercontent.com/11080337/27760260-b71bf0c0-5e75-11e7-9d1c-afc25200a902.png)
+
+
+
+
+
+
+
+
