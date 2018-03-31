@@ -2,7 +2,7 @@
 
 This guide instructs you step-by-step on how to set Cloudmobi live as an Ad Network on the Admob Mediation platform.
 
-Currently we support Rewarded Video and Interstitial for mediation.
+Currently we support Rewarded Video, banner and Interstitial for mediation.
 
 #### Before You Start
 
