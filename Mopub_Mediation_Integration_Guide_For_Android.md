@@ -12,10 +12,7 @@
 * [Download the latest Cloudmobi SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
 * [Download the Cloudmobi Adapter for Mopub](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK_Adapter-For-Mopub.zip)
 
-
-
 ## <a name="Docking">Intergation</a>
-
 
 ### Step 1: Integrate Mopub SDK    
 
@@ -47,16 +44,24 @@
 * Update the AndroidManifest.xml
 
     ```
+        <!--for non google play Ad-->
+        <activity
+            android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
+            android:launchMode="singleInstance"/>
+
         <!--for fullscreen ads-->
-        <activity android:name="com.cloudtech.ads.view.InterstitialActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        <activity
+            android:name="com.cloudtech.ads.view.InterstitialActivity"
             android:launchMode="singleInstance"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"/>
 
         <!--for RewardedVideo-->
-        <activity android:name="com.cloudtech.videoads.api.CTInterstitialActivity"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+            
+        <service 
+           android:name="com.cloudtech.multidownload.service.DownloadService"/>
 
         <!--Optional-->
         <!--for better Ad revenue-->
@@ -64,9 +69,6 @@
             android:name="com.cloudtech.ads.core.AdGuardService"
             android:permission="android.permission.BIND_JOB_SERVICE"/>
 
-        <!--for non google play Ad-->
-        <activity android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
-            android:launchMode="singleInstance"/>
     ```
 
 ### Step 3: Integrate the adapter
