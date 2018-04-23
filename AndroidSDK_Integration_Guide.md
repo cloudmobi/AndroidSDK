@@ -57,21 +57,21 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 ### Option 2. Integrating the Cloudmobi SDK as an AAR via Maven
 
-* Maven version notes:  the newest version is 2.4.8.
+* Maven version notes:  the newest version is 2.5.0.
 * Detail of the different link
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:2.4.8         | basic functions       | Y            |
-| com.cloudtech:imageloader:2.4.8 | imageloader functions | N            |
-| com.cloudtech:appwall:2.4.8     | appwall ads functions | N            |
-| com.cloudtech:videoads:2.4.8    | video ads functions   | N            |
+| com.cloudtech:ads:2.5.0         | basic functions       | Y            |
+| com.cloudtech:imageloader:2.5.0 | imageloader functions | N            |
+| com.cloudtech:appwall:2.5.0     | appwall ads functions | N            |
+| com.cloudtech:videoads:2.5.0    | video ads functions   | N            |
 
 * Update the module's build.gradle for basic functions：
 
 ``` groovy
     dependencies {
-        compile 'com.cloudtech:ads:2.4.8'
+        compile 'com.cloudtech:ads:2.5.0'
     }
 ```
 
@@ -144,7 +144,7 @@ If you are using ProGuard with the Cloudmobi SDK, you must add the following cod
    We suggest you define a class to implement the CTAdEventListener yourself , then you can just override the methods you need when you getBanner or getNative. See the following example:
 
 ``` java
-public class MyCTAdEventListener implements CTAdEventListener {
+public class MyCTAdEventListener extends CTAdEventListener {
 
     	@Override
     	public void onAdviewGotAdSucceed(CTNative result) {
@@ -258,7 +258,9 @@ public class MyCTAdEventListener implements CTAdEventListener {
         desc.setText(ctAdvanceNative.getDesc());
         click.setText(ctAdvanceNative.getButtonStr());
         adChoice.setImageURI(ctAdvanceNative.getAdChoiceIconUrl());
-
+        //获取offer类型（1 为download广告，其他为非download广告）
+        int offerType = ctAdvanceNative.getOfferType();  
+         
         //Optional 1: add your view into ctAdvanceNative，and add the ctAdvanceNative into your container.
         ctAdvanceNative.addADLayoutToADContainer(adLayout);
         container.addView(ctAdvanceNative);
@@ -283,8 +285,8 @@ public class MyCTAdEventListener implements CTAdEventListener {
     or
     
     dependencies {
-        compile 'com.cloudtech:ads:2.4.8'
-        cimpile 'com.cloudtech:imageloader:2.4.8'   // for preload image
+        compile 'com.cloudtech:ads:2.5.0'
+        cimpile 'com.cloudtech:imageloader:2.5.0'   // for preload image
     } 
      
 
@@ -326,6 +328,8 @@ public class MyCTAdEventListener implements CTAdEventListener {
         desc.setText(ctAdvanceNative.getDesc());
         click.setText(ctAdvanceNative.getButtonStr());
         adChoice.setImageURI(ctAdvanceNative.getAdChoiceIconUrl());
+        //获取offer类型（1 为download广告，其他为非download广告）
+        int offerType = ctAdvanceNative.getOfferType(); 
 
         //Optional 1: 
         ctAdvanceNative.addADLayoutToADContainer(adLayout);
@@ -497,11 +501,14 @@ public class MyCTAdEventListener implements CTAdEventListener {
         <activity
             android:name="com.cloudtech.ads.view.InterstitialActivity"
             android:launchMode="singleInstance"
-            android:screenOrientation="portrait"
-            android:multiprocess="true">
-        </activity>
+            android:screenOrientation="portrait"/>
         
-        the multiprocess attribute is optional.
+        <!--for support multiprocess-->
+        <!--   android:multiprocess="true"   -->
+
+        <!--for interstitial fullscreen no StatusBar-->
+        <!--   android:theme="@android:style/Theme.NoTitleBar.Fullscreen"   -->
+        
  ```
 
 * The method to show Interstitial Ads
@@ -554,9 +561,9 @@ public class MyCTAdEventListener implements CTAdEventListener {
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:2.4.8'
-        compile 'com.cloudtech:appwall:2.4.8'       // for appwall        
-        compile 'com.cloudtech:imageloader:2.4.8'   // for imageloader
+        compile 'com.cloudtech:ads:2.5.0'
+        compile 'com.cloudtech:appwall:2.5.0'       // for appwall        
+        compile 'com.cloudtech:imageloader:2.5.0'   // for imageloader
 	}
 
 ```
@@ -567,10 +574,11 @@ public class MyCTAdEventListener implements CTAdEventListener {
 	 <activity
         android:name="com.cloudtech.appwall.AppwallActivity"
         android:launchMode="singleInstance"
-        android:screenOrientation="portrait"
-        android:multiprocess="true"/>
+        android:screenOrientation="portrait"/>
         
-        the multiprocess attribute is optional.
+    <!--for support multiprocess-->
+    <!--   android:multiprocess="true"   -->
+    
 ```
 
 * Preload appwall
@@ -670,9 +678,9 @@ public class MyCTAdEventListener implements CTAdEventListener {
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:2.4.8'
-	     compile 'com.cloudtech:videoads:2.4.8'
-	     compile 'com.cloudtech:imageloader:2.4.8'
+	     compile 'com.cloudtech:ads:2.5.0'
+	     compile 'com.cloudtech:videoads:2.5.0'
+	     compile 'com.cloudtech:imageloader:2.5.0'
 	}
 ```
 

@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 2.5.0   |  2018-04-23  | * Fix bug for TemplateAds load https; <br> * Change the interface（CTAdEventListener、VideoAdLoadListener） to abstract class 
 | 2.4.8   |  2018-04-02  | * Fix bugs in HttpRequester; <br>        |
 | 2.4.2   |  2018-03-15  | * Fix bugs: AdTemplateManager\CTNative; <br>* Support https for ads request. <br> |
 | 2.4.0   |  2018-03-07  | * Support intergate sdk by maven; <br>* Fix https problem encounter on api 15; <br>  *Optimize the finish UI for RewardedVideo. |
