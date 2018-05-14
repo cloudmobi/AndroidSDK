@@ -60,9 +60,6 @@
             android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
             
-        <service 
-           android:name="com.cloudtech.multidownload.service.DownloadService"/>
-
         <!--Optional-->
         <!--for better Ad revenue-->
         <service

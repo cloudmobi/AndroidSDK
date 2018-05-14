@@ -75,8 +75,7 @@ Currently we support rewarded video and interstitial mediation for Android
 <activity android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
-<service android:name="com.cloudtech.multidownload.service.DownloadService"/>
-
+<!--for better revenue-->
 <service
     android:name="com.cloudtech.ads.core.AdGuardService"
     android:permission="android.permission.BIND_JOB_SERVICE"/>

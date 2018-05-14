@@ -62,16 +62,16 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:2.5.2         | basic functions       | Y            |
-| com.cloudtech:imageloader:2.5.2 | imageloader functions | N            |
-| com.cloudtech:appwall:2.5.2     | appwall ads functions | N            |
-| com.cloudtech:videoads:2.5.2    | video ads functions   | N            |
+| com.cloudtech:ads:2.5.3         | basic functions       | Y            |
+| com.cloudtech:imageloader:2.5.3 | imageloader functions | N            |
+| com.cloudtech:appwall:2.5.3     | appwall ads functions | N            |
+| com.cloudtech:videoads:2.5.3    | video ads functions   | N            |
 
 * Update the module's build.gradle for basic functions：
 
 ``` groovy
     dependencies {
-        compile 'com.cloudtech:ads:2.5.2'
+        compile 'com.cloudtech:ads:2.5.3'
     }
 ```
 
@@ -85,10 +85,6 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-<!--Optional Permissions-->
-<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-
    <!-- Necessary -->
    <activity android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
        android:launchMode="singleInstance"/>
@@ -96,9 +92,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
    <service
        android:name="com.cloudtech.ads.core.AdGuardService"
        android:permission="android.permission.BIND_JOB_SERVICE"/>
-
-   <service android:name="com.cloudtech.multidownload.service.DownloadService"/>
-
+       
 ```
 
 ## <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
@@ -258,7 +252,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
         desc.setText(ctAdvanceNative.getDesc());
         click.setText(ctAdvanceNative.getButtonStr());
         adChoice.setImageURI(ctAdvanceNative.getAdChoiceIconUrl());
-        //获取offer类型（1 为download广告，其他为非download广告）
+        //offerType（1 : download ads; 2 : content ads）
         int offerType = ctAdvanceNative.getOfferType();  
          
         //Optional 1: add your view into ctAdvanceNative，and add the ctAdvanceNative into your container.
@@ -285,8 +279,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
     or
     
     dependencies {
-        compile 'com.cloudtech:ads:2.5.2'
-        cimpile 'com.cloudtech:imageloader:2.5.2'   // for preload image
+        compile 'com.cloudtech:ads:2.5.3'
+        cimpile 'com.cloudtech:imageloader:2.5.3'   // for preload image
     } 
      
 
@@ -328,7 +322,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
         desc.setText(ctAdvanceNative.getDesc());
         click.setText(ctAdvanceNative.getButtonStr());
         adChoice.setImageURI(ctAdvanceNative.getAdChoiceIconUrl());
-        //获取offer类型（1 为download广告，其他为非download广告）
+        //offerType（1 : download ads; 2 : content ads）
         int offerType = ctAdvanceNative.getOfferType(); 
 
         //Optional 1: 
@@ -561,9 +555,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:2.5.2'
-        compile 'com.cloudtech:appwall:2.5.2'       // for appwall        
-        compile 'com.cloudtech:imageloader:2.5.2'   // for imageloader
+        compile 'com.cloudtech:ads:2.5.3'
+        compile 'com.cloudtech:appwall:2.5.3'       // for appwall        
+        compile 'com.cloudtech:imageloader:2.5.3'   // for imageloader
 	}
 
 ```
@@ -678,9 +672,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:2.5.2'
-	     compile 'com.cloudtech:videoads:2.5.2'
-	     compile 'com.cloudtech:imageloader:2.5.2'
+	     compile 'com.cloudtech:ads:2.5.3'
+	     compile 'com.cloudtech:videoads:2.5.3'
+	     compile 'com.cloudtech:imageloader:2.5.3'
 	}
 ```
 
