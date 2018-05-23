@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 2.5.6   |  2017-5-23   | * Update SDK for GDRP                    |
 | 2.5.3   |  2017-5-14   | * Support interstitial by u3d; <br> * Compile project on Java1.7; <br> * Update the DeepLink logic; <br> * Remove the DownloadService for multidownload library;
 | 2.5.2   |  2017-04-27  | * Remove the imei from request params;   |
 | 2.5.0   |  2018-04-23  | * Fix bug for TemplateAds load https; <br> * Change the interface（CTAdEventListener、VideoAdLoadListener） to abstract class 
