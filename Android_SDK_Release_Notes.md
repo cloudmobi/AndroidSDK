@@ -14,5 +14,5 @@
 | 2.1.5   |  2017-12-22  | * Add the setUserId() function for s2s-postback <br> * Fix the bug for RewardedVideo play <br> * Fix the bug for multi callback for RewardedView callback |
 | 2.0.9   |  2017-11-30  | * Optimize RewardedVideo logic           |
 | 2.0.4   |  2017-10-20  | * add volum controller in RewardedVideo <br> * add params pn in RewardedVideo Tracking-log <br>  * fix RewardedVideo impression log ts tag |
-| 2.5.6   |  2018-05-23  | * * SDK GDPR compliant and upgraded the integration Guide on how to set an ad choices in the corner about the information you shared with us |
+| 2.5.6   |  2018-05-23  | * SDK GDPR compliant and upgraded the integration Guide on how to set an ad choices in the corner about the information you shared with us |
 
