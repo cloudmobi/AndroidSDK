@@ -270,8 +270,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, 
-                                                adChoice_link_url);
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW,adChoice_link_url);
                     browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(browserIntent);
                 } catch (Exception e) {
@@ -357,8 +356,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, 
-                                                adChoice_link_url);
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW,adChoice_link_url);
                     browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(browserIntent);
                 } catch (Exception e) {
