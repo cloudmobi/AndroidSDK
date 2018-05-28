@@ -238,6 +238,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
 
 ``` java
     private void showAd(CTAdvanceNative ctAdvanceNative) {
+    
         ImageView img = (ImageView) adLayout.findViewById(R.id.iv_img);
         ImageView icon = (ImageView) adLayout.findViewById(R.id.iv_icon);
         TextView title = (TextView)adLayout.findViewById(R.id.tv_title);
@@ -262,6 +263,22 @@ public class MyCTAdEventListener extends CTAdEventListener {
         //Optional 2：just register the click for your view, add your view into your container.
         ctAdvanceNative.registeADClickArea(adLayout);
         container.addView(adLayout); 
+        
+        //According to GDRP, register click for adChoiceIcon
+        String adChoice_link_url = ctAdvanceNative.getAdChoiceLinkUrl();
+        adChoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, 
+                                                adChoice_link_url);
+                    browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(browserIntent);
+                } catch (Exception e) {
+                    YeLog.i("openChoicesLink failed::" + e.getMessage());
+                }
+            }
+        });
    }
    
 ```
@@ -308,6 +325,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
             
     //show ads
     private void showAd(CTAdvanceNative ctAdvanceNative) {
+    
         ImageView img = (ImageView) adLayout.findViewById(R.id.iv_img);
         ImageView icon = (ImageView) adLayout.findViewById(R.id.iv_icon);
         TextView title = (TextView)adLayout.findViewById(R.id.tv_title);
@@ -332,6 +350,22 @@ public class MyCTAdEventListener extends CTAdEventListener {
         //Optional 2：
         ctAdvanceNative.registeADClickArea(adLayout);
         container.addView(adLayout); 
+        
+        //According to GDRP, register click for adChoiceIcon
+        String adChoice_link_url = ctAdvanceNative.getAdChoiceLinkUrl();
+        adChoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, 
+                                                adChoice_link_url);
+                    browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(browserIntent);
+                } catch (Exception e) {
+                    YeLog.i("openChoicesLink failed::" + e.getMessage());
+                }
+            }
+        });
    }
    
 ```
