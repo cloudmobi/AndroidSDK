@@ -760,7 +760,7 @@ Before showing the video, you can request or query the video status by calling:
     boolean available = CTServiceVideo.isRewardedVideoAvailable(ctVideo);
 ```
 
-Once you get an available Reward Video, you are ready to show this video ad to your users by calling the showRewardedVideo() method as in the following example:
+Because it takes a while to load the video files. You may need to wait uniti a video file loads completely. Once you get an available Reward Video, you are ready to show this video ad to your users by calling the showRewardedVideo() method as in the following example:
 
 
 ```java
