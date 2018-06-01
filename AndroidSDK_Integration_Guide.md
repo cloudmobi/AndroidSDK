@@ -15,9 +15,6 @@
 * [Banner](#banner)
 * [Interstitial](#interstitial)
 * [Appwall](#appwall)
-* [Basic Ad Mediation (Banner-Interstitial-Native)](#basic)
-    * [facebook](#facebook)
-    * [admob](#admob)
 * [Rewarded Video](#reward)
 * [Error Code For SDK](#error)
 
@@ -631,45 +628,6 @@ public class MyCTAdEventListener extends CTAdEventListener {
     AppwallHelper.showAppwall(context, "your slotid");
 ```
 
-## <a name="basic">Basic Ad Mediation</a> [Banner-Interstitial-Native]
-
-### <a name="facebook">Facebook</a>
-
-* [Facebook advertisement](https://developers.facebook.com/docs/audience-network)
-* Set up the facebook placementId in Cloudmobi platform.
-* Update the module's build.gradle, as per below:
-
-``` groovy
-	dependencies {
-    	compile 'com.facebook.android:audience-network-sdk:4.25.0'
-	}
-```
-
-### <a name="admob">Google Admob</a>
-
-* [Google Admob advertisement](https://firebase.google.com/docs/admob/android/quick-start)
-* Set up the admob unitId in Cloudmobi platform.
-* Update the module's build.gradle ad bolow:
-
-``` groovy
-	dependencies {
-    	compile 'com.google.android.gms:play-services-ads:11.8.0'
-	}
-```
-
-* Update AndroidManifest.xml for admob ads:
-
-```xml
-    <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
-    
-    <activity 
-        android:name="com.google.android.gms.ads.AdActivity"
-        android:configChanges="keyboard|keyboardHidden|orientation|
-            screenLayout|uiMode|screenSize|smallestScreenSize"
-        android:theme="@android:style/Theme.Translucent" />
-```
 
 ## <a name="reward">Rewarded Video Ad Integration</a>
 
