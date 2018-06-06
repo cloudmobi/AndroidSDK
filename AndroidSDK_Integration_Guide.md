@@ -59,16 +59,16 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:2.5.7         | basic functions       | Y            |
-| com.cloudtech:imageloader:2.5.7 | imageloader functions | N            |
-| com.cloudtech:appwall:2.5.7     | appwall ads functions | N            |
-| com.cloudtech:videoads:2.5.7    | video ads functions   | N            |
+| com.cloudtech:ads:2.5.9         | basic functions       | Y            |
+| com.cloudtech:imageloader:2.5.9 | imageloader functions | N            |
+| com.cloudtech:appwall:2.5.9     | appwall ads functions | N            |
+| com.cloudtech:videoads:2.5.9    | video ads functions   | N            |
 
 * Update the module's build.gradle for basic functions：
 
 ``` groovy
     dependencies {
-        compile 'com.cloudtech:ads:2.5.7'
+        compile 'com.cloudtech:ads:2.5.9'
     }
 ```
 
@@ -94,10 +94,32 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 ## <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
 
-You can init the SDK in your application as detailed below:
+Init the SDK in your application as detailed below:
 
 ```java
    CTService.init(context, "one of your slotId");
+   
+```
+
+Use this interface to upload consent from affected users.
+
+```java
+    /**
+     * @param context       context
+     * @param consentValue  whether the user agrees
+     * @param consentType   the agreement name signed with users
+     * @param listener      callback
+     */
+    CTService.uploadConsent(this, true, "GDPR", new HttpRequester.Listener() {
+            @Override
+            public void onGetDataSucceed(byte[] data) {
+            }
+
+            @Override
+            public void onGetDataFailed(String error) {
+            }
+    });
+        
 ```
 
 ## <a name="step4">Step 4. Android code obfuscation</a> 
@@ -292,8 +314,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
     or
     
     dependencies {
-        compile 'com.cloudtech:ads:2.5.7'
-        cimpile 'com.cloudtech:imageloader:2.5.7'   // for preload image
+        compile 'com.cloudtech:ads:2.5.9'
+        cimpile 'com.cloudtech:imageloader:2.5.9'   // for preload image
     } 
      
 
@@ -584,9 +606,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:2.5.7'
-        compile 'com.cloudtech:appwall:2.5.7'       // for appwall        
-        compile 'com.cloudtech:imageloader:2.5.7'   // for imageloader
+        compile 'com.cloudtech:ads:2.5.9'
+        compile 'com.cloudtech:appwall:2.5.9'       // for appwall        
+        compile 'com.cloudtech:imageloader:2.5.9'   // for imageloader
 	}
 
 ```
@@ -662,9 +684,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:2.5.7'
-	     compile 'com.cloudtech:videoads:2.5.7'
-	     compile 'com.cloudtech:imageloader:2.5.7'
+	     compile 'com.cloudtech:ads:2.5.9'
+	     compile 'com.cloudtech:videoads:2.5.9'
+	     compile 'com.cloudtech:imageloader:2.5.9'
 	}
 ```
 

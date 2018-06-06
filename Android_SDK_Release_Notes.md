@@ -2,10 +2,11 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
-| 2.5.7   |  2017-6-04   | * Optimize the network request           |
-| 2.5.6   |  2017-5-23   | * Update SDK for GDRP                    |
-| 2.5.3   |  2017-5-14   | * Support interstitial by u3d; <br> * Compile project on Java1.7; <br> * Update the DeepLink logic; <br> * Remove the DownloadService for multidownload library;
-| 2.5.2   |  2017-04-27  | * Remove the imei from request params;   |
+| 2.5.9   |  2018-6-06   | * Support upload consent from users      |
+| 2.5.7   |  2018-6-04   | * Optimize the network request           |
+| 2.5.6   |  2018-5-23   | * Update SDK for GDRP                    |
+| 2.5.3   |  2018-5-14   | * Support interstitial by u3d; <br> * Compile project on Java1.7; <br> * Update the DeepLink logic; <br> * Remove the DownloadService for multidownload library;
+| 2.5.2   |  2018-04-27  | * Remove the imei from request params;   |
 | 2.5.0   |  2018-04-23  | * Fix bug for TemplateAds load https; <br> * Change the interface（CTAdEventListener、VideoAdLoadListener） to abstract class 
 | 2.4.8   |  2018-04-02  | * Fix bugs in HttpRequester; <br>        |
 | 2.4.2   |  2018-03-15  | * Fix bugs: AdTemplateManager\CTNative; <br>* Support https for ads request. <br> |
