@@ -138,9 +138,7 @@ If you are using ProGuard with the Cloudmobi SDK, you must add the following cod
         @android.webkit.JavascriptInterface <methods>;
     }
 
-    #for not group facebook/admob ads
-    -dontwarn com.google.android.**
-    -dontwarn com.facebook.ads.**
+   
 ```
 
 
