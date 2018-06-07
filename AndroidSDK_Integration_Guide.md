@@ -21,7 +21,6 @@
 ## <a name="start">Before You Start</a>
 
 - Cloudmobi Android SDK supports banner, interstitial, native, and rewarded video 
-- Furthermore, Cloudmobi Android SDK supports mediation with facebook and Admob via SDK in banner, interstitial and native ads
 - Cloudmobi Android SDK supports Android API 14 or later
 - Please make sure you have signed up on the Cloudmobi Platform. If you haven't signed up, please contact us via email: sdk_support@yeahmobi.com
 - Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
