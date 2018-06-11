@@ -11,7 +11,6 @@
     * [Element-Native with imagePreload](#preload)
     * [Element-Native with adCache](#cache)
     * [Element-Native for Multiple](#multi)
-    * [Template-Native](#template)
 * [Banner](#banner)
 * [Interstitial](#interstitial)
 * [Appwall](#appwall)
@@ -58,16 +57,16 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:2.5.9         | basic functions       | Y            |
-| com.cloudtech:imageloader:2.5.9 | imageloader functions | N            |
-| com.cloudtech:appwall:2.5.9     | appwall ads functions | N            |
-| com.cloudtech:videoads:2.5.9    | video ads functions   | N            |
+| com.cloudtech:ads:2.6.0         | basic functions       | Y            |
+| com.cloudtech:imageloader:2.6.0 | imageloader functions | N            |
+| com.cloudtech:appwall:2.6.0     | appwall ads functions | N            |
+| com.cloudtech:videoads:2.6.0    | video ads functions   | N            |
 
 * Update the module's build.gradle for basic functions：
 
 ``` groovy
     dependencies {
-        compile 'com.cloudtech:ads:2.5.9'
+        compile 'com.cloudtech:ads:2.6.0'
     }
 ```
 
@@ -137,8 +136,7 @@ If you are using ProGuard with the Cloudmobi SDK, you must add the following cod
     -keepclassmembers class * {
         @android.webkit.JavascriptInterface <methods>;
     }
-
-   
+    
 ```
 
 
@@ -311,8 +309,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
     or
     
     dependencies {
-        compile 'com.cloudtech:ads:2.5.9'
-        cimpile 'com.cloudtech:imageloader:2.5.9'   // for preload image
+        compile 'com.cloudtech:ads:2.6.0'
+        cimpile 'com.cloudtech:imageloader:2.6.0'   // for preload image
     } 
      
 
@@ -463,34 +461,6 @@ public class MyCTAdEventListener extends CTAdEventListener {
         });
 ```
 
-### <a name="template">Template-Native ads interface</a>
-
-* The method to load templat-Native Ads:(the template is set up in ssp.)
-
-``` java
-	ViewGroup container = (ViewGroup) view.findViewById(R.id.container);
-
-    /**
-     * @param slotId            cloudmobi id
-     * @param isShowCloseButton close button switch 
-     * @param context           context
-     * @param adListener        callback listener 
-     * @return
-     */
- 	CTService.getNative("your slotid", false, context,
-                new MyCTAdEventListener(){
-                    @Override
-                    public void onAdviewGotAdSucceed(CTNative result) {
-                        if (result != null) {
-                            container.removeAllViews();
-                            container.addView(result);
-                        }
-                        super.onAdviewGotAdSucceed(result);
-                    }
-                });
-                
-```
-
 ## <a name="banner">Banner Ads Integration</a>
 
 * The method to load Banner Ads:
@@ -603,9 +573,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:2.5.9'
-        compile 'com.cloudtech:appwall:2.5.9'       // for appwall        
-        compile 'com.cloudtech:imageloader:2.5.9'   // for imageloader
+        compile 'com.cloudtech:ads:2.6.0'
+        compile 'com.cloudtech:appwall:2.6.0'       // for appwall        
+        compile 'com.cloudtech:imageloader:2.6.0'   // for imageloader
 	}
 
 ```
@@ -681,9 +651,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:2.5.9'
-	     compile 'com.cloudtech:videoads:2.5.9'
-	     compile 'com.cloudtech:imageloader:2.5.9'
+	     compile 'com.cloudtech:ads:2.6.0'
+	     compile 'com.cloudtech:videoads:2.6.0'
+	     compile 'com.cloudtech:imageloader:2.6.0'
 	}
 ```
 
