@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                    |
 | ------- | :----------: | :--------------------------------------- |
+| 2.6.2   |  2018-06-26  | * Support setSchema for request          |
 | 2.6.0   |  2018-6-11   | * Remove fb/admob logic from sdk;        |
 | 2.5.9   |  2018-6-06   | * Support upload consent from users      |
 | 2.5.7   |  2018-6-04   | * Optimize the network request           |
