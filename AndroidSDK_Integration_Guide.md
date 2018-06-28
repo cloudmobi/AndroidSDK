@@ -57,16 +57,16 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:2.6.2         | basic functions       | Y            |
-| com.cloudtech:imageloader:2.6.2 | imageloader functions | N            |
-| com.cloudtech:appwall:2.6.2     | appwall ads functions | N            |
-| com.cloudtech:videoads:2.6.2    | video ads functions   | N            |
+| com.cloudtech:ads:2.6.3         | basic functions       | Y            |
+| com.cloudtech:imageloader:2.6.3 | imageloader functions | N            |
+| com.cloudtech:appwall:2.6.3     | appwall ads functions | N            |
+| com.cloudtech:videoads:2.6.3    | video ads functions   | N            |
 
 * Update the module's build.gradle for basic functions：
 
 ``` groovy
     dependencies {
-        compile 'com.cloudtech:ads:2.6.2'
+        compile 'com.cloudtech:ads:2.6.3'
     }
 ```
 
@@ -309,8 +309,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
     or
     
     dependencies {
-        compile 'com.cloudtech:ads:2.6.2'
-        cimpile 'com.cloudtech:imageloader:2.6.2'   // for preload image
+        compile 'com.cloudtech:ads:2.6.3'
+        cimpile 'com.cloudtech:imageloader:2.6.3'   // for preload image
     } 
      
 
@@ -573,9 +573,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:2.6.2'
-        compile 'com.cloudtech:appwall:2.6.2'       // for appwall        
-        compile 'com.cloudtech:imageloader:2.6.2'   // for imageloader
+        compile 'com.cloudtech:ads:2.6.3'
+        compile 'com.cloudtech:appwall:2.6.3'       // for appwall        
+        compile 'com.cloudtech:imageloader:2.6.3'   // for imageloader
 	}
 
 ```
@@ -651,9 +651,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:2.6.2'
-	     compile 'com.cloudtech:videoads:2.6.2'
-	     compile 'com.cloudtech:imageloader:2.6.2'
+	     compile 'com.cloudtech:ads:2.6.3'
+	     compile 'com.cloudtech:videoads:2.6.3'
+	     compile 'com.cloudtech:imageloader:2.6.3'
 	}
 ```
 
