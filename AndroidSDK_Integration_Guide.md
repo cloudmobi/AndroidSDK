@@ -23,7 +23,6 @@
 - Cloudmobi Android SDK supports Android API 14 or later
 - Please make sure you have signed up on the Cloudmobi Platform. If you haven't signed up, please contact us via email: sdk_support@yeahmobi.com
 - Please make sure you have added an app and at least one ad slot in Cloudmobi Platform
-- If you have rewarded video ads in your app, please make sure to use the rewarded video slot id for Initialization.Or else you will never got any rewarded video ads.
 - Please download [our latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
 
 ## <a name="step1">Step 1. Add the Cloudmobi SDK in your project</a>  
@@ -94,7 +93,8 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 ## <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
 
-Init the SDK in your application as detailed below:
+Init the SDK in your application as detailed below: 
+If you have rewarded video ads in your app, please make sure to use the rewarded video slot id for Initialization.Or else you will never got any rewarded video ads.
 
 ```java
    CTService.init(context, "one of your slotId");
