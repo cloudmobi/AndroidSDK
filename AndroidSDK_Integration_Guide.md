@@ -311,7 +311,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
     
     dependencies {
         compile 'com.cloudtech:ads:2.6.3'
-        cimpile 'com.cloudtech:imageloader:2.6.3'   // for preload image
+        compile 'com.cloudtech:imageloader:2.6.3'   // for preload image
     } 
      
 
