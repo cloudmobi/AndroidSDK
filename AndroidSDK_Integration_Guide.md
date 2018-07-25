@@ -94,10 +94,11 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 ## <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
 
 Init the SDK in your application as detailed below: 
+
 **If you have rewarded video ads in your app, please make sure to use the rewarded video slot id for Initialization.Or else you will never got any rewarded video ads.**
 
 ```java
-   CTService.init(context, "one of rewarded video slotId");
+   CTService.init(context, "one of your slotId");
    
 ```
 
