@@ -53,7 +53,8 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 ### Option 2. Integrating the Cloudmobi SDK as an AAR via Maven
 
 * Maven version notes:[Jcenter](http://jcenter.bintray.com/com/cloudtech/)
-* Detail of the different link (Latest Version)
+* Detail of the different link 
+* please make sure you are using version 2.6.3
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
