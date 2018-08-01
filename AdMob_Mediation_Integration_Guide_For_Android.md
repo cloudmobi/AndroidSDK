@@ -47,15 +47,15 @@ Currently we support rewarded video and interstitial mediation for Android
 
 ![image](https://user-images.githubusercontent.com/20314643/34600301-c64459c0-f231-11e7-8ab5-67a61423e5ea.png)
 
-(1)Class Names should match the ad formats in Cloudmobi -- for example, if you are integrating rewarded video ads, the class name should be: 
+(1)Class Names should match the ad formats in Cloudmobi -- for example, if you are integrating rewarded video ads, the full class name should be: 
 
  ```
- com.cloudtech.admob.mediation.CTRewardedVideoAdapter 
+ com.cloudtech.mediation.admob.CTRewardedVideoAdapter 
  
  ```
- 
+
 (2)Parameter is the slot ID in the Cloudmobi platform. You can find it in your app list on the Cloudmobi platform
- 
+
 
 ![image](https://user-images.githubusercontent.com/20314643/34601111-7ecc1b88-f235-11e7-90e1-017785793815.png)
 
@@ -65,8 +65,9 @@ Currently we support rewarded video and interstitial mediation for Android
 
 - Rewarded video :Copy `CTRewardedVideoAdapter.java` into your code folder
 - Interstitial :Copy `CTCustomEventInterstitial.java` into your code folder
+- Banner :Copy `CTCustomEventBanner.java` into your code folder
 
-### step 5: Update the AndroidMenifest.xml for Cloudmobi 
+### Step 5: Update the AndroidMenifest.xml for Cloudmobi 
 
 - Rewarded Video
 
@@ -79,17 +80,6 @@ Currently we support rewarded video and interstitial mediation for Android
 <service
     android:name="com.cloudtech.ads.core.AdGuardService"
     android:permission="android.permission.BIND_JOB_SERVICE"/>
-```
-
-- Interstitial
-
-```xml
-<!-- android:multiprocess="true" :: for load ads in multiProcess -->
-<!-- for cloudssp interstitial ads -->
-<activity android:name="com.cloudtech.ads.view.InterstitialActivity"
-  android:launchMode="singleInstance"
-  android:multiprocess="true"
-  android:screenOrientation="portrait"/>
 ```
 
 ### Step 6. Add ProGuard Rules

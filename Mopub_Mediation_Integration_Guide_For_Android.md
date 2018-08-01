@@ -32,13 +32,13 @@
 
 * Add the needed jars to your module's libs/
 * Update the module's build.gradle as follows
- 
+
     ```
-   dependencies {
+      dependencies {
        compile files('libs/cloudssp_xx.jar')
        compile files('libs/cloudssp_videoads_xx.jar')
        compile files('libs/cloudssp_imageloader_xx.jar')
-   }
+      }
     ```
 
 * Update the AndroidManifest.xml
@@ -48,24 +48,18 @@
         <activity
             android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
             android:launchMode="singleInstance"/>
-
-        <!--for fullscreen ads-->
-        <activity
-            android:name="com.cloudtech.ads.view.InterstitialActivity"
-            android:launchMode="singleInstance"
-            android:screenOrientation="portrait"/>
-
+    
         <!--for RewardedVideo-->
         <activity
             android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+          android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
             
         <!--Optional-->
         <!--for better Ad revenue-->
         <service
             android:name="com.cloudtech.ads.core.AdGuardService"
             android:permission="android.permission.BIND_JOB_SERVICE"/>
-
+    
     ```
 
 ### Step 3: Integrate the adapter
@@ -98,10 +92,10 @@
 
     | ad type | full class name |
     | --- | --- |
-    | Banner ad unit     | com.mopub.mobileads.CTAdapterBanner |
-    | FullScreen ad unit | com.mopub.mobileads.CTAdapterFullScreen |
-    | Native ad unit     | com.mopub.mobileads.CTAdapterNative |
-    | RewardedVideo ad unit     | com.mopub.mobileads.CTAdapterRewardVideo|
+    | Banner ad unit     | com.cloudtech.mediation.mopub.CTAdapterBanner |
+    | FullScreen ad unit | com.cloudtech.mediation.mopub.CTAdapterFullScreen |
+    | Native ad unit     | com.cloudtech.mediation.mopub.CTAdapterNative |
+    | RewardedVideo ad unit     | com.cloudtech.mediation.mopub.CTAdapterRewardVideo |
 
     For each unit, you will need to add a JSON object:  **{"CT_SLOTID":"your slotID"}**
 ![image](https://user-images.githubusercontent.com/11080337/27760260-b71bf0c0-5e75-11e7-9d1c-afc25200a902.png)

@@ -12,7 +12,7 @@
     * [Element-Native with adCache](#cache)
     * [Element-Native for Multiple](#multi)
 * [Banner](#banner)
-* [Interstitial](#interstitial)
+* [New Dynamic Interstitial](#interstitial)
 * [Appwall](#appwall)
 * [Rewarded Video](#reward)
 * [Error Code For SDK](#error)
@@ -54,7 +54,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 * Maven version notes:[Jcenter](http://jcenter.bintray.com/com/cloudtech/)
 * Detail of the different link 
-* please make sure you are using version 2.6.3
+* Please make sure you are using version 3.0.7
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
@@ -472,13 +472,17 @@ public class MyCTAdEventListener extends CTAdEventListener {
 	ViewGroup container = (ViewGroup) view.findViewById(R.id.container);
 
     /**
+     * @param activity          Activity
      * @param slotId            cloudmobi id
-     * @param isShowCloseButton close button switch 
-     * @param context           context
+     * @param container			container
+     * @param adSize			AdSize.AD_SIZE_320X50,
+     							AdSize.AD_SIZE_320X100,
+     							AdSize.AD_SIZE_300X250;
      * @param adListener        callback listener 
      * @return
      */
-  	CTService.getBanner("your slotid", false, context,
+CTService.getMRAIDBanner(getActivity(), "your slotid", container, adSize,
+  	CTService.getMRAIDBanner( context, ,
   	 		new MyCTAdEventListener(){
 
                     @Override
@@ -508,37 +512,27 @@ public class MyCTAdEventListener extends CTAdEventListener {
                 });
 ```
 
+When you successfully integrated the Banner Ad, you will see the ads are like this
+
+
+![-1](https://user-images.githubusercontent.com/20314643/42366029-b6289f2a-8132-11e8-9c3e-86557d164d85.png)
+![320x100](https://user-images.githubusercontent.com/20314643/42370991-c4188812-8140-11e8-80e9-ab6947c12e92.png)
+![300x250](https://user-images.githubusercontent.com/20314643/42370999-c74139f8-8140-11e8-91ff-ba0cdb0ae08a.png)
+
+
 ## <a name="interstitial">Interstitial Ads Integration</a>
-
-* update AndroidManifest.xml for Interstitial Ads
-
- ``` xml
-        <activity
-            android:name="com.cloudtech.ads.view.InterstitialActivity"
-            android:launchMode="singleInstance"
-            android:screenOrientation="portrait"/>
-        
-        <!--for support multiprocess-->
-        <!--   android:multiprocess="true"   -->
-
-        <!--for interstitial fullscreen no StatusBar-->
-        <!--   android:theme="@android:style/Theme.NoTitleBar.Fullscreen"   -->
-        
- ```
 
 * The method to show Interstitial Ads
 
 ``` java
 
     /**
+     * @param context           Activity
      * @param slotId            cloudmobi id
-     * @param isShowCloseButton close button switch 
-     * @param isFullScreen      full screen switch 
-     * @param context           context
      * @param adListener        callback listener 
      * @return
      */
-   CTService.preloadInterstitial("your slotid",true,false,context,
+   CTService.preloadMRAIDInterstitial(context, "your slotid",
     		  new MyCTAdEventListener(){
                    @Override
                    public void onInterstitialLoadSucceed(CTNative result) {
@@ -547,9 +541,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
     
                    @Override
                    public void onAdviewGotAdSucceed(CTNative result){
-                    	if (result != null && result.isLoaded()){
+                        if (CTService.isInterstitialAvailable(result)) {
                            CTService.showInterstitial(result);
-                       }
+                        }
                        super.onAdviewGotAdSucceed(result);
                    }
     
@@ -561,6 +555,12 @@ public class MyCTAdEventListener extends CTAdEventListener {
             });
                 
 ```
+
+When you successfully integrated the New Dynamic Interstitial Ad, you will see the ads are like this
+
+![image](https://user-images.githubusercontent.com/20314643/41895879-b4536200-7955-11e8-9847-587f175c4a54.png)
+![image](https://user-images.githubusercontent.com/20314643/41895941-e0c6ad1a-7955-11e8-9393-ed91e4a4906f.png)
+
 
 ## <a name="appwall">Appwall integration</a>
 
@@ -620,6 +620,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
     AppwallHelper.showAppwall(context, "your slotid");
 ```
 
+When you successfully integrated the APP Wall Ad, you will see the ads are like this
+
+![image](https://user-images.githubusercontent.com/20314643/42366246-47526c9c-8133-11e8-963c-bd0eb7a3e1a6.png)
 
 ## <a name="reward">Rewarded Video Ad Integration</a>
 
@@ -756,6 +759,10 @@ public void onRewardedVideoAdRewarded(String rewardName, String rewardAmount) {
    }
     
 ```
+
+When you successfully integrated the Rewarded Video, you will see the ads are like this
+
+![image](https://user-images.githubusercontent.com/20314643/42371626-94e8e6a2-8142-11e8-9598-eb75de753070.png)
 
 ## <a name="error">Error Code For SDK</a>
 
