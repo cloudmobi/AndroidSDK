@@ -2,7 +2,7 @@
 
 | Version | Release Date | Notes                                                        |
 | :-----: | :----------: | :----------------------------------------------------------- |
-|  3.0.7  |  2018-08-01  | *                                                            |
+|  3.0.7  |  2018-08-01  | *  * New Banner and interstitial ad format * Banner and interstitial API updates * Interstitial ads supports video and picture and must be fullscreen                                                          |
 |  2.6.3  |  2018-06-28  | * Callback failed with incorrect slotid for preloadRewardedVideo |
 |  2.6.2  |  2018-06-26  | * Support setSchema for request                              |
 |  2.6.0  |  2018-6-11   | * Remove fb/admob logic from sdk;                            |
