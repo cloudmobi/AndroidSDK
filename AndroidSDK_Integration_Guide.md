@@ -12,7 +12,7 @@
     * [Element-Native with adCache](#cache)
     * [Element-Native for Multiple](#multi)
 * [Banner](#banner)
-* [New Dynamic Interstitial](#interstitial)
+* [Interstitial](#interstitial)
 * [Appwall](#appwall)
 * [Rewarded Video](#reward)
 * [Error Code For SDK](#error)
@@ -556,7 +556,7 @@ When you successfully integrated the Banner Ad, you will see the ads are like th
                 
 ```
 
-When you successfully integrated the New Dynamic Interstitial Ad, you will see the ads are like this
+When you successfully integrated the Interstitial Ad, you will see the ads are like this
 
 ![image](https://user-images.githubusercontent.com/20314643/41895879-b4536200-7955-11e8-9847-587f175c4a54.png)
 ![image](https://user-images.githubusercontent.com/20314643/41895941-e0c6ad1a-7955-11e8-9393-ed91e4a4906f.png)
