@@ -85,10 +85,6 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
    <activity android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
        android:launchMode="singleInstance"/>
 
-   <service
-       android:name="com.cloudtech.ads.core.AdGuardService"
-       android:permission="android.permission.BIND_JOB_SERVICE"/>
-       
 ```
 
 ## <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
