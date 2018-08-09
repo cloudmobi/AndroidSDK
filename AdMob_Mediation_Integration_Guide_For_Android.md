@@ -75,11 +75,6 @@ Currently we support rewarded video and interstitial mediation for Android
 <!-- for cloudmobi rewarded video -->
 <activity android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
-
-<!--for better revenue-->
-<service
-    android:name="com.cloudtech.ads.core.AdGuardService"
-    android:permission="android.permission.BIND_JOB_SERVICE"/>
 ```
 
 ### Step 6. Add ProGuard Rules
@@ -92,9 +87,6 @@ Currently we support rewarded video and interstitial mediation for Android
 -keep public class com.cloudtech.**{*;}
 #for gaid
 -keep class **.AdvertisingIdClient$** { *; }
-#for not group facebook/admob ads
--dontwarn com.google.android.**
--dontwarn com.facebook.ads.**
 ```
 **Done!** You are now all set to deliver Cloudmobi Ads within your application!
 
