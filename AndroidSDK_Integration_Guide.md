@@ -29,7 +29,7 @@
 
 We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
-### Option 1. Integrating the Cloudmobi SDK in to your APP manually
+###  1. Integrating the Cloudmobi SDK in to your APP manually
 
 
 * [Download the latest SDK](https://github.com/cloudmobi/AndroidSDK/blob/master/AndroidSDK.zip)
@@ -50,26 +50,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
     }
 ```
 
-### Option 2. Integrating the Cloudmobi SDK as an AAR via Maven
 
-* Maven version notes:[Jcenter](http://jcenter.bintray.com/com/cloudtech/)
-* Detail of the different link 
-* Please make sure you are using version 3.0.9
-
-| link name                       | link function         | require(Y/N) |
-| ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:3.0.9         | basic functions       | Y            |
-| com.cloudtech:imageloader:3.0.9 | imageloader functions | N            |
-| com.cloudtech:appwall:3.0.9     | appwall ads functions | N            |
-| com.cloudtech:videoads:3.0.9    | video ads functions   | N            |
-
-* Update the module's build.gradle for basic functions：
-
-``` groovy
-    dependencies {
-        compile 'com.cloudtech:ads:3.0.9'
-    }
-```
 
 ## <a name="step2">Step 2. Update AndroidManifest.xml</a>  
 
