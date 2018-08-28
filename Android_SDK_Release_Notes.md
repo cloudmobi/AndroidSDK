@@ -2,9 +2,10 @@
 
 | Version | Release Date | Notes                                                        |
 | :-----: | :----------: | :----------------------------------------------------------- |
-|  3.1.1  |  2018-08-21  | * Fix maven confusion issue                               |
-|  3.1.0  |  2018-08-21  | * remove webview ssl error handle                               |
-|  3.0.9  |  2018-08-14  | * Fix the CountDown problem in interstitial ads                               |
+|  3.1.3  |  2018-08-28  | * Fix bug for RewardedVideo.                                 |
+|  3.1.1  |  2018-08-21  | * Fix maven confusion issue                                  |
+|  3.1.0  |  2018-08-21  | * remove webview ssl error handle                            |
+|  3.0.9  |  2018-08-14  | * Fix the CountDown problem in interstitial ads              |
 |  3.0.7  |  2018-08-01  | * New Banner and interstitial ad format </br> * Banner and interstitial API updates </br>* Interstitial ads supports video and picture and must be fullscreen |
 |  2.6.3  |  2018-06-28  | * Callback failed with incorrect slotid for preloadRewardedVideo |
 |  2.6.2  |  2018-06-26  | * Support setSchema for request                              |
