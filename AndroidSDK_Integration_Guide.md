@@ -54,12 +54,14 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 * Maven version notes:[Jcenter](http://jcenter.bintray.com/com/cloudtech/)
 * Detail of the different link 
 * Please make sure you are using version 3.1.3
- | link name                       | link function         | require(Y/N) |
+
+| link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
 | com.cloudtech:ads:3.1.3         | basic functions       | Y            |
 | com.cloudtech:imageloader:3.1.3 | imageloader functions | N            |
 | com.cloudtech:appwall:3.1.3     | appwall ads functions | N            |
 | com.cloudtech:videoads:3.1.3    | video ads functions   | N            |
+
  * Update the module's build.gradle for basic functions：
  ``` groovy
     dependencies {
