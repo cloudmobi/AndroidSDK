@@ -517,10 +517,8 @@ When you successfully integrated the Banner Ad, you will see the ads are like th
 
 ```xml
 	<activity
-    	android:name="com.cloudtech.ads.view.InterstitialActivity"  />    
+    	android:name="com.cloudtech.ads.view.InterstitialActivity" />    
 ```
-
-
 
 * The method to show Interstitial Ads
 

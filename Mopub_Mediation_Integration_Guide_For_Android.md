@@ -33,26 +33,30 @@
 * Add the needed jars to your module's libs/
 * Update the module's build.gradle as follows
 
-    ```
-      dependencies {
-       compile files('libs/cloudssp_xx.jar')
-       compile files('libs/cloudssp_videoads_xx.jar')
-       compile files('libs/cloudssp_imageloader_xx.jar')
-      }
+    ```groovy
+    dependencies {
+    	compile files('libs/cloudssp_xx.jar')
+    	compile files('libs/cloudssp_videoads_xx.jar')
+    	compile files('libs/cloudssp_imageloader_xx.jar')
+    }
     ```
 
 * Update the AndroidManifest.xml
 
-    ```
-        <!--for non google play Ad-->
-        <activity
-            android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
-            android:launchMode="singleInstance"/>
+    ```xml
+    <!--for non google play Ad-->
+    <activity
+    	android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
+    	android:launchMode="singleInstance" />
     
-        <!--for RewardedVideo-->
-        <activity
-            android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
-          android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    <!--for cloudmobi RewardedVideo-->
+    <activity
+    	android:name="com.cloudtech.videoads.view.CTInterstitialActivity"    			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    
+    <!-- for cloudmobi Interstitial -->	
+    <activity
+    	android:name="com.cloudtech.ads.view.InterstitialActivity" />   
+    
     ```
 
 ### Step 3: Integrate the adapter

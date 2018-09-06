@@ -73,8 +73,15 @@ Currently we support rewarded video and interstitial mediation for Android
 
 ```xml
 <!-- for cloudmobi rewarded video -->
-<activity android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
-  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+<activity android:name="com.cloudtech.videoads.view.CTInterstitialActivity"  			 android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+```
+
+- Interstitial
+
+```xml
+<!-- for cloudmobi Interstitial -->	
+<activity
+	android:name="com.cloudtech.ads.view.InterstitialActivity" />    
 ```
 
 ### Step 6. Add ProGuard Rules
