@@ -67,7 +67,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
     dependencies {
         compile 'com.cloudtech:ads:3.1.3'
     }
-```
+ ```
 
 ## <a name="step2">Step 2. Update AndroidManifest.xml</a>  
 
@@ -76,9 +76,9 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-   <!-- Necessary -->
-   <activity android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
-       android:launchMode="singleInstance"/>
+<!-- Necessary -->
+<activity android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
+	android:launchMode="singleInstance"/>
 
 ```
 
@@ -303,8 +303,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
     or
     
     dependencies {
-        compile 'com.cloudtech:ads:3.0.9'
-        compile 'com.cloudtech:imageloader:3.0.9'   // for preload image
+        compile 'com.cloudtech:ads:3.2.0'
+        compile 'com.cloudtech:imageloader:3.2.0'   // for preload image
     } 
      
 
@@ -513,6 +513,15 @@ When you successfully integrated the Banner Ad, you will see the ads are like th
 
 ## <a name="interstitial">Interstitial Ads Integration</a>
 
+- Update the AndroidManifest.xml for Interstitial
+
+```xml
+	<activity
+    	android:name="com.cloudtech.ads.view.InterstitialActivity"  />    
+```
+
+
+
 * The method to show Interstitial Ads
 
 ``` java
@@ -567,9 +576,9 @@ When you successfully integrated the Interstitial Ad, you will see the ads are l
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:3.0.9'
-        compile 'com.cloudtech:appwall:3.0.9'       // for appwall        
-        compile 'com.cloudtech:imageloader:3.0.9'   // for imageloader
+        compile 'com.cloudtech:ads:3.2.0'
+        compile 'com.cloudtech:appwall:3.2.0'       // for appwall        
+        compile 'com.cloudtech:imageloader:3.2.0'   // for imageloader
 	}
 
 ```
@@ -648,9 +657,9 @@ When you successfully integrated the APP Wall Ad, you will see the ads are like 
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:3.0.9'
-	     compile 'com.cloudtech:videoads:3.0.9'
-	     compile 'com.cloudtech:imageloader:3.0.9'
+	     compile 'com.cloudtech:ads:3.2.0'
+	     compile 'com.cloudtech:videoads:3.2.0'
+	     compile 'com.cloudtech:imageloader:3.2.0'
 	}
 ```
 
