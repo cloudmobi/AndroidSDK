@@ -53,19 +53,19 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 ### Option 2. Integrating the Cloudmobi SDK as an AAR via Maven
 * Maven version notes:[Jcenter](http://jcenter.bintray.com/com/cloudtech/)
 * Detail of the different link 
-* Please make sure you are using version 3.1.3
+* Please make sure you are using version 3.2.0
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:3.1.3         | basic functions       | Y            |
-| com.cloudtech:imageloader:3.1.3 | imageloader functions | N            |
-| com.cloudtech:appwall:3.1.3     | appwall ads functions | N            |
-| com.cloudtech:videoads:3.1.3    | video ads functions   | N            |
+| com.cloudtech:ads:3.2.0         | basic functions       | Y            |
+| com.cloudtech:imageloader:3.2.0 | imageloader functions | N            |
+| com.cloudtech:appwall:3.2.0     | appwall ads functions | N            |
+| com.cloudtech:videoads:3.2.0    | video ads functions   | N            |
 
  * Update the module's build.gradle for basic functions：
  ``` groovy
     dependencies {
-        compile 'com.cloudtech:ads:3.1.3'
+        compile 'com.cloudtech:ads:3.2.0'
     }
  ```
 
