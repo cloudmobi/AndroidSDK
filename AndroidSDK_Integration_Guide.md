@@ -15,6 +15,7 @@
 * [Interstitial](#interstitial)
 * [Appwall](#appwall)
 * [Rewarded Video](#reward)
+* [Native Video](#native_video)
 * [Error Code For SDK](#error)
 
 ## <a name="start">Before You Start</a>
@@ -290,6 +291,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
    
 ```
 
+
+
 ### <a name="preload">Single elements-Native ads interface for imageProload</a>
 
 ``` java 
@@ -376,9 +379,11 @@ public class MyCTAdEventListener extends CTAdEventListener {
    
 ```
 
+
+
 ### <a name="cache">Single elements-Native ads interface for AdCache</a>
 
-* get Ads for cache
+* Get Ads for cache
 
 ```java
         
@@ -403,7 +408,7 @@ public class MyCTAdEventListener extends CTAdEventListener {
 
 ```
 
-* show ads from cache
+* Show ads from cache
 
 ```java
       
@@ -428,7 +433,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
 
 
 
-### <a name="multi">Multi elements-Native ads interface</a>
+
+
+### <a name="multi">Multi Elements-Native ads interface</a>
 
 * The method to load multi Native ads
 
@@ -454,6 +461,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
             }
         });
 ```
+
+
 
 ## <a name="banner">Banner Ads Integration</a>
 
@@ -511,6 +520,7 @@ When you successfully integrated the Banner Ad, you will see the ads are like th
 ![300x250](https://user-images.githubusercontent.com/20314643/42370999-c74139f8-8140-11e8-91ff-ba0cdb0ae08a.png)
 
 
+
 ## <a name="interstitial">Interstitial Ads Integration</a>
 
 - Update the AndroidManifest.xml for Interstitial
@@ -558,6 +568,7 @@ When you successfully integrated the Interstitial Ad, you will see the ads are l
 
 ![image](https://user-images.githubusercontent.com/20314643/41895879-b4536200-7955-11e8-9847-587f175c4a54.png)
 ![image](https://user-images.githubusercontent.com/20314643/41895941-e0c6ad1a-7955-11e8-9393-ed91e4a4906f.png)
+
 
 
 ## <a name="appwall">Appwall integration</a>
@@ -621,6 +632,8 @@ When you successfully integrated the Interstitial Ad, you will see the ads are l
 When you successfully integrated the APP Wall Ad, you will see the ads are like this
 
 ![image](https://user-images.githubusercontent.com/20314643/42366246-47526c9c-8133-11e8-963c-bd0eb7a3e1a6.png)
+
+
 
 ## <a name="reward">Rewarded Video Ad Integration</a>
 
@@ -761,6 +774,100 @@ public void onRewardedVideoAdRewarded(String rewardName, String rewardAmount) {
 When you successfully integrated the Rewarded Video, you will see the ads are like this
 
 ![image](https://user-images.githubusercontent.com/20314643/42371626-94e8e6a2-8142-11e8-9598-eb75de753070.png)
+
+
+
+## <a name="native_video">Native Video Ad Integration</a>
+
+- Update the module's build.gradle for Native Video：
+
+```groovy
+	dependencies {
+        compile files('libs/cloudssp_xx.jar')
+        compile files('libs/cloudssp_videoads_xx.jar')
+	}
+	
+	or
+	
+	dependencies {
+	     compile 'com.cloudtech:ads:3.2.0'
+	     compile 'com.cloudtech:videoads:3.2.0'
+	     compile 'com.cloudtech:imageloader:3.2.0'
+	}
+```
+
+- Load the NativeVideo
+
+```java
+    CTServiceVideo.getNativeVideo(context, "slotid", new VideoAdLoadListener() {
+            @Override
+            public void onVideoAdLoaded(CTVideo video) {
+                showNativeVideo(video);
+            }
+
+            @Override
+            public void onVideoAdLoadFailed(CTError error) {
+            }
+        });
+
+```
+
+- Show the NativeVideo
+
+```java
+    private void showNativeVideo(CTVideo video) {
+        if (video == null) {
+            return;
+        }
+        
+        //layout for NativeVideo
+        ViewGroup videoLayout = (ViewGroup) View.inflate(context, R.layout.native_video_layout, null);
+
+        CTNativeVideo ctNativeVideo = (CTNativeVideo) video;
+        
+        //whether autoplay for 4G
+        ctNativeVideo.setWWANPlayEnabled(false);
+
+        TextView video_title = videoLayout.findViewById(R.id.video_title);
+        RelativeLayout video_container = videoLayout.findViewById(R.id.video_container);
+        SimpleDraweeView video_choice = videoLayout.findViewById(R.id.video_choice);
+        TextView video_desc = videoLayout.findViewById(R.id.video_desc);
+        TextView video_button = videoLayout.findViewById(R.id.video_button);
+
+        video_title.setText(ctNativeVideo.getTitle());
+        video_container.addView(ctNativeVideo.getNativeVideoAdView());
+        video_choice.setImageURI(Uri.parse(ctNativeVideo.getAdChoiceIconUrl()));
+        video_desc.setText(Html.fromHtml(ctNativeVideo.getDesc()));
+        video_button.setText(ctNativeVideo.getButtonStr());
+
+        //register for tracking， videolayout is the clickarea
+        ctNativeVideo.registerForTracking(videoLayout, 
+            new NativeVideoAdListener() {
+                @Override
+                public void videoPlayBegin() {
+                }
+
+                @Override
+                public void videoPlayFinished() {
+                }
+
+                @Override
+                public void videoPlayClicked() {
+                }
+
+                @Override
+                public void videoPlayError(Exception e) {
+                }
+        });
+
+        //container in your app
+        rl_container.removeAllViews();
+        rl_container.addView(videoLayout);
+    }
+
+```
+
+
 
 ## <a name="error">Error Code For SDK</a>
 
