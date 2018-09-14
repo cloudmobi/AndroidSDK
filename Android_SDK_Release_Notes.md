@@ -2,7 +2,8 @@
 
 | Version | Release Date | Notes                                                        |
 | :-----: | :----------: | :----------------------------------------------------------- |
-|  3.2.0  |  2018-09-06  | * support native video.  </br>  * Interstitial ads changed shown way from dialog to activity.                               |
+|  3.2.1  |  2018-09-13  | * Support playable ads.  </br>  * Fix some interstitial ads bug. |
+|  3.2.0  |  2018-09-06  | * Support native video.  </br>  * Interstitial ads changed shown way from dialog to activity.                               |
 |  3.1.3  |  2018-08-28  | * Fix bug for RewardedVideo.                                 |
 |  3.1.1  |  2018-08-21  | * Fix maven confusion issue                                  |
 |  3.1.0  |  2018-08-21  | * remove webview ssl error handle                            |
