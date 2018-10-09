@@ -54,7 +54,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 ### Option 2. Integrating the Cloudmobi SDK as an AAR via Maven
 * Maven version notes:[Jcenter](http://jcenter.bintray.com/com/cloudtech/)
 * Detail of the different link 
-* Please make sure you are using version 3.2.6
+* Please make sure you are using version 3.2.8
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
@@ -66,7 +66,7 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
  * Update the module's build.gradle for basic functions：
  ``` groovy
     dependencies {
-        compile 'com.cloudtech:ads:3.2.6'
+        compile 'com.cloudtech:ads:3.2.8'
     }
  ```
 
@@ -81,6 +81,13 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 <activity android:name="com.cloudtech.ads.view.InnerWebLandingActivity"
 	android:launchMode="singleInstance"/>
 
+If your targetSdkVersion is 28, you need update <application> as follows: 
+  	<application
+    	...  	
+        android:usesCleartextTraffic="true"
+        ...>
+        ...
+    </application>
 ```
 
 ## <a name="step3">Step 3. Initialize the Cloudmobi SDK</a>  
@@ -306,8 +313,8 @@ public class MyCTAdEventListener extends CTAdEventListener {
     or
     
     dependencies {
-        compile 'com.cloudtech:ads:3.2.6'
-        compile 'com.cloudtech:imageloader:3.2.6'   // for preload image
+        compile 'com.cloudtech:ads:3.2.8'
+        compile 'com.cloudtech:imageloader:3.2.8'   // for preload image
     } 
      
 
@@ -585,9 +592,9 @@ When you successfully integrated the Interstitial Ad, you will see the ads are l
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:3.2.6'
-        compile 'com.cloudtech:appwall:3.2.6'       // for appwall        
-        compile 'com.cloudtech:imageloader:3.2.6'   // for imageloader
+        compile 'com.cloudtech:ads:3.2.8'
+        compile 'com.cloudtech:appwall:3.2.8'       // for appwall        
+        compile 'com.cloudtech:imageloader:3.2.8'   // for imageloader
 	}
 
 ```
@@ -668,9 +675,9 @@ When you successfully integrated the APP Wall Ad, you will see the ads are like 
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:3.2.6'
-	     compile 'com.cloudtech:videoads:3.2.6'
-	     compile 'com.cloudtech:imageloader:3.2.6'
+	     compile 'com.cloudtech:ads:3.2.8'
+	     compile 'com.cloudtech:videoads:3.2.8'
+	     compile 'com.cloudtech:imageloader:3.2.8'
 	}
 ```
 
@@ -790,9 +797,9 @@ When you successfully integrated the Rewarded Video, you will see the ads are li
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:3.2.6'
-	     compile 'com.cloudtech:videoads:3.2.6'
-	     compile 'com.cloudtech:imageloader:3.2.6'
+	     compile 'com.cloudtech:ads:3.2.8'
+	     compile 'com.cloudtech:videoads:3.2.8'
+	     compile 'com.cloudtech:imageloader:3.2.8'
 	}
 ```
 
