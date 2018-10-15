@@ -94,7 +94,7 @@ If your targetSdkVersion is 28, you need update <application> as follows:
 
 Init the SDK in your application as detailed below: 
 
-**If you have rewarded video ads in your app, please make sure to use the rewarded video slot id for Initialization.Or else you will never got any rewarded video ads.**
+**Please make sure to initialize Cloudmobi SDK before doing anything.**
 
 ```java
    CTService.init(context, "one of your slotId");
