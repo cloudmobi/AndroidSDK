@@ -481,15 +481,13 @@ public class MyCTAdEventListener extends CTAdEventListener {
     /**
      * @param activity          Activity
      * @param slotId            cloudmobi id
-     * @param container			container
      * @param adSize			AdSize.AD_SIZE_320X50,
      							AdSize.AD_SIZE_320X100,
      							AdSize.AD_SIZE_300X250;
      * @param adListener        callback listener 
      * @return
      */
-CTService.getMRAIDBanner(getActivity(), "your slotid", container, adSize,
-  	CTService.getMRAIDBanner( context, ,
+	CTService.getMRAIDBanner(getActivity(), "your slotid", adSize,
   	 		new MyCTAdEventListener(){
 
                     @Override
@@ -753,9 +751,15 @@ Because it takes a while to load the video creatives. You may need to wait until
              public void videoClosed() {
                  Log.e(TAG, "videoClosed: ");
              }
+     
+             @Override
+             public void videoClicked() {
+                 Log.e(TAG, "videoClicked: ");
+             }
     
              @Override
-             public void onRewardedVideoAdRewarded(String rewardName, String rewardAmount) {
+             public void onRewardedVideoAdRewarded(String rewardName, String rewardAmount)
+             {
                  Log.e(TAG, "onRewardedVideoAdRewarded: ");
              }
          });
