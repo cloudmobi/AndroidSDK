@@ -2,7 +2,8 @@
 
 | Version | Release Date | Notes                                                        |
 | :-----: | :----------: | :----------------------------------------------------------- |
-|  3.3.1  |  2018-10-15  | * Fix the flicker screen issue caused during initialization of activity and webview.                                 |
+|  3.3.3  |  2018-10-19  | * remove params ViewGroup from getMaridBanner. </br>  * add  videoClick  callbackfor RewardedVideo. </br>   * Add the limit for must call init interface. |
+|  3.3.1  |  2018-10-15  | * Fix the flicker screen issue caused during initialization of activity and webview. |
 |  3.2.8  |  2018-10-09  | * Fix problem for RewardedVideo                              |
 |  3.2.1  |  2018-09-13  | * Support playable ads.  </br>  * Fix some interstitial ads bug. |
 |  3.2.0  |  2018-09-06  | * Support native video.  </br>  * Interstitial ads changed shown way from dialog to activity. |
