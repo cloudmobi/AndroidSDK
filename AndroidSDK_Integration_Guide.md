@@ -272,11 +272,6 @@ public class MyCTAdEventListener extends CTAdEventListener {
         //offerType（1 : download ads; 2 : content ads）
         int offerType = ctAdvanceNative.getOfferType();  
          
-        //Optional 1: add your view into ctAdvanceNative，and add the ctAdvanceNative into your container.
-        ctAdvanceNative.addADLayoutToADContainer(adLayout);
-        container.addView(ctAdvanceNative);
-        
-        //Optional 2：just register the click for your view, add your view into your container.
         ctAdvanceNative.registeADClickArea(adLayout);
         container.addView(adLayout); 
         
@@ -360,11 +355,6 @@ public class MyCTAdEventListener extends CTAdEventListener {
         //offerType（1 : download ads; 2 : content ads）
         int offerType = ctAdvanceNative.getOfferType(); 
 
-        //Optional 1: 
-        ctAdvanceNative.addADLayoutToADContainer(adLayout);
-        container.addView(ctAdvanceNative);
-        
-        //Optional 2：
         ctAdvanceNative.registeADClickArea(adLayout);
         container.addView(adLayout); 
         
@@ -481,9 +471,9 @@ public class MyCTAdEventListener extends CTAdEventListener {
     /**
      * @param activity          Activity
      * @param slotId            cloudmobi id
-     * @param adSize			AdSize.AD_SIZE_320X50,
-     							AdSize.AD_SIZE_320X100,
-     							AdSize.AD_SIZE_300X250;
+     * @param adSize		AdSize.AD_SIZE_320X50,
+     				AdSize.AD_SIZE_320X100,
+     				AdSize.AD_SIZE_300X250;
      * @param adListener        callback listener 
      * @return
      */
@@ -532,7 +522,7 @@ When you successfully integrated the Banner Ad, you will see the ads are like th
 
 ```xml
 	<activity
-    	android:name="com.cloudtech.ads.view.InterstitialActivity" />    
+    		android:name="com.cloudtech.ads.view.InterstitialActivity" />    
 ```
 
 * The method to show Interstitial Ads
@@ -582,17 +572,17 @@ When you successfully integrated the Interstitial Ad, you will see the ads are l
 
 ``` groovy
 	dependencies {
-        compile files('libs/cloudssp_xx.jar')
-        compile files('libs/cloudssp_appwall_xx.jar')       // for appwall        
-        compile files('libs/cloudssp_imageloader_xx.jar')   // for imageloader
+        	compile files('libs/cloudssp_xx.jar')
+        	compile files('libs/cloudssp_appwall_xx.jar')       // for appwall        
+        	compile files('libs/cloudssp_imageloader_xx.jar')   // for imageloader
 	}
 	
 	or
 	
 	dependencies {
-        compile 'com.cloudtech:ads:3.3.5'
-        compile 'com.cloudtech:appwall:3.3.5'       // for appwall        
-        compile 'com.cloudtech:imageloader:3.3.5'   // for imageloader
+        	compile 'com.cloudtech:ads:3.3.5'
+        	compile 'com.cloudtech:appwall:3.3.5'       // for appwall        
+        	compile 'com.cloudtech:imageloader:3.3.5'   // for imageloader
 	}
 
 ```
@@ -601,9 +591,9 @@ When you successfully integrated the Interstitial Ad, you will see the ads are l
 
 ``` xml
 	 <activity
-        android:name="com.cloudtech.appwall.AppwallActivity"
-        android:launchMode="singleInstance"
-        android:screenOrientation="portrait"/>
+        	android:name="com.cloudtech.appwall.AppwallActivity"
+        	android:launchMode="singleInstance"
+        	android:screenOrientation="portrait"/>
         
     <!--for support multiprocess-->
     <!--   android:multiprocess="true"   -->
@@ -665,17 +655,17 @@ When you successfully integrated the APP Wall Ad, you will see the ads are like 
 
 ``` groovy
 	dependencies {
-        compile files('libs/cloudssp_xx.jar')
-        compile files('libs/cloudssp_videoads_xx.jar')
-        compile files('libs/cloudssp_imageloader_xx.jar')
+        	compile files('libs/cloudssp_xx.jar')
+        	compile files('libs/cloudssp_videoads_xx.jar')
+        	compile files('libs/cloudssp_imageloader_xx.jar')
 	}
 	
 	or
 	
 	dependencies {
-	     compile 'com.cloudtech:ads:3.3.5'
-	     compile 'com.cloudtech:videoads:3.3.5'
-	     compile 'com.cloudtech:imageloader:3.3.5'
+	     	compile 'com.cloudtech:ads:3.3.5'
+	     	compile 'com.cloudtech:videoads:3.3.5'
+	     	compile 'com.cloudtech:imageloader:3.3.5'
 	}
 ```
 
@@ -683,7 +673,8 @@ When you successfully integrated the APP Wall Ad, you will see the ads are like 
 
 ``` xml    
 
-    <activity android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
+    <activity 
+	    android:name="com.cloudtech.videoads.view.CTInterstitialActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
 
 ```
@@ -794,8 +785,8 @@ When you successfully integrated the Rewarded Video, you will see the ads are li
 
 ```groovy
 	dependencies {
-        compile files('libs/cloudssp_xx.jar')
-        compile files('libs/cloudssp_videoads_xx.jar')
+        	compile files('libs/cloudssp_xx.jar')
+        	compile files('libs/cloudssp_videoads_xx.jar')
 	}
 	
 	or
