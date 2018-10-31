@@ -2,7 +2,7 @@
 
 | Version | Release Date | Notes                                                        |
 | :-----: | :----------: | :----------------------------------------------------------- |
-|  3.3.7  |  2018-10-31  | * Fix bugs: remove ProgressBar for NativeAds                 |
+|  3.3.8  |  2018-10-31  | * Fix bugs: remove ProgressBar for NativeAds; EndPage for RewardedVideo |
 |  3.3.5  |  2018-10-24  | * merge the cache function for mraid ads                     |
 |  3.3.3  |  2018-10-19  | * remove params ViewGroup from getMaridBanner. </br>  * add  videoClick  callback for RewardedVideo. </br> |
 |  3.3.1  |  2018-10-15  | * Fix the flicker screen issue caused during initialization of activity and webview. |
