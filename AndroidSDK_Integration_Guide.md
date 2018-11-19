@@ -86,10 +86,10 @@ We supports both Maven dependencies and jar dependencies to integrate our SDK:
 
 | link name                       | link function         | require(Y/N) |
 | ------------------------------- | --------------------- | ------------ |
-| com.cloudtech:ads:3.3.9         | basic functions       | Y            |
-| com.cloudtech:imageloader:3.3.9 | imageloader functions | N            |
-| com.cloudtech:appwall:3.3.9     | appwall ads functions | N            |
-| com.cloudtech:videoads:3.3.9    | video ads functions   | N            |
+| com.cloudtech:ads:3.4.0         | basic functions       | Y            |
+| com.cloudtech:imageloader:3.4.0 | imageloader functions | N            |
+| com.cloudtech:appwall:3.4.0     | appwall ads functions | N            |
+| com.cloudtech:videoads:3.4.0    | video ads functions   | N            |
 
  * Update the module's build.gradle for basic functions：
  ``` groovy
