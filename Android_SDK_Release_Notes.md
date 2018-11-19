@@ -2,6 +2,7 @@
 
 | Version | Release Date | Notes                                                        |
 | :-----: | :----------: | :----------------------------------------------------------- |
+|  3.4.0  |  2018-11-19  | * Remove the interface for imagePreload;                     |
 |  3.3.9  |  2018-11-08  | * Fix init function bug                                      |
 |  3.3.8  |  2018-10-31  | * Fix bugs: remove ProgressBar for NativeAds; EndPage for RewardedVideo |
 |  3.3.5  |  2018-10-24  | * merge the cache function for mraid ads                     |
